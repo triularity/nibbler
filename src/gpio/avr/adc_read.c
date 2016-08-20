@@ -49,6 +49,9 @@ _gpio_adc_read
 	value = ADCL;
 	value |= (ADCH << 8);
 
+	/* Repeat the upper bits to fill low zeros */
+	value |= (value >> 10);
+
 	return value;
 
 #else	/* ADSC */

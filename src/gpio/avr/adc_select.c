@@ -10,6 +10,7 @@
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
+#include "debug.h"
 
 /*
  * REFSn
@@ -96,11 +97,11 @@
  * ADLAR Register
  */
 #if	defined(OPT_ADCSRB_ADLAR)
-#define	_ADCSRB_ADD_ADLAR(x)	((x)|ADLAR)
+#define	_ADCSRB_ADD_ADLAR(x)	((x)|(1<<ADLAR))
 #define	_ADMUX_ADD_ADLAR(x)	(x)
 #elif	defined(OPT_ADMUX_ADLAR)
 #define	_ADCSRB_ADD_ADLAR(x)	(x)
-#define	_ADMUX_ADD_ADLAR(x)	((x)|ADLAR)
+#define	_ADMUX_ADD_ADLAR(x)	((x)|(1<<ADLAR))
 #elif	!defined(ADLAR)
 #define	_ADCSRB_ADD_ADLAR(x)	(x)
 #define	_ADMUX_ADD_ADLAR(x)	(x)
@@ -131,9 +132,16 @@ _gpio_adc_select
 #endif
 
 #else	/* ADMUXA */
+//_nibbler_println("");
+//_nibbler_print("_gpio_adc_reference = ");
+//_nibbler_printhexln(_gpio_adc_reference);
+//_nibbler_print("mux = ");
+//_nibbler_printhexln(mux);
 
 	ADMUX = _ADMUX_ADD_ADLAR(
 		_ADMUX_ADD_MUX(_ADMUX_MK_REFS(_gpio_adc_reference), mux));
+//_nibbler_print("ADMUX = 0x");
+//_nibbler_printhexln(ADMUX);
 
 #ifdef	ADCSRB
 	/* This may become 'ADCSRB = ADCSRB' if no-op macros not filtered */
@@ -142,6 +150,8 @@ _gpio_adc_select
 		_ADCSRB_ADD_MUX(
 			_ADCSRB_ADD_REFS(ADCSRB, _gpio_adc_reference),
 				mux));
+//_nibbler_print("ADCSRB = 0x");
+//_nibbler_printhexln(ADCSRB);
 #endif
 #endif	/* ADCSRB */
 
