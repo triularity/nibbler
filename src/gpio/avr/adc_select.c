@@ -110,7 +110,7 @@
 
 
 void
-adc_select
+_gpio_adc_select
 (
 	uint8_t mux
 )

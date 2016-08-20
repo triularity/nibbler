@@ -13,7 +13,7 @@
 
 
 gpio_value_t
-adc_read
+_gpio_adc_read
 (
 	uint8_t mux
 )
