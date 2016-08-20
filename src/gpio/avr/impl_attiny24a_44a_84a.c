@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: attiny24a_44a_84a.avrspec
+ *
  * Pin configuration for attiny24a/attiny44a/attiny84a.
  */
 #if	defined(__AVR_ATtiny24A__) || defined(__AVR_ATtiny44A__) || defined(__AVR_ATtiny84A__)

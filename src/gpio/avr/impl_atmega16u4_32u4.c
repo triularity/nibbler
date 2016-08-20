@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: atmega16u4_32u4.avrspec
+ *
  * Pin configuration for atmega16u4/atmega32u4.
  */
 #if	defined(__AVR_ATmega16U4__) || defined(__AVR_ATmega32U4__)

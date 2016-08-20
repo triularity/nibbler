@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: atmega640_1280_1281_2560_2561.avrspec
+ *
  * Pin configuration for atmega640/atmega1280/atmega1281/atmega2560/atmega2561.
  */
 #if	defined(__AVR_ATmega640__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)
@@ -1357,40 +1359,40 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #84 - D84 (PG3/TOSC2) */
 	{
-#if	!defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
 		REG_TO_OFFSET(DDRG),
 		REG_TO_OFFSET(PORTG),
 		REG_TO_OFFSET(PING),
 		(1 << 3), /* DDRG3/PORTG3/PING3 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		0,
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
 	},
 
 	/* #85 - D85 (PG4/TOSC1) */
 	{
-#if	!defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
 		REG_TO_OFFSET(DDRG),
 		REG_TO_OFFSET(PORTG),
 		REG_TO_OFFSET(PING),
 		(1 << 4), /* DDRG4/PORTG4/PING4 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		0,
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
 	}
 };
 

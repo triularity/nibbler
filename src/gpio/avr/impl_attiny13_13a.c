@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: attiny13_13a.avrspec
+ *
  * Pin configuration for attiny13/attiny13a.
  */
 #if	defined(__AVR_ATtiny13__) || defined(__AVR_ATtiny13A__)

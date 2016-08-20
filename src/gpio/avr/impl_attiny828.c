@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: attiny828.avrspec
+ *
  * Pin configuration for attiny828.
  */
 #if	defined(__AVR_ATtiny828__)

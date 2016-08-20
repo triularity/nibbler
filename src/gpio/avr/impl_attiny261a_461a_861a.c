@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: attiny261a_461a_861a.avrspec
+ *
  * Pin configuration for attiny261a/attiny461a/attiny861a.
  */
 #if	defined(__AVR_ATtiny261A__) || defined(__AVR_ATtiny461A__) || defined(__AVR_ATtiny861A__)

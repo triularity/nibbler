@@ -1,6 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
+ * Make changes to: atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
+ *
  * Pin configuration for atmega48a/atmega48pa/atmega88a/atmega88pa/atmega168a/atmega168pa/atmega328/atmega328p.
  */
 #if	defined(__AVR_ATmega48A__) || defined(__AVR_ATmega48PA__) || defined(__AVR_ATmega88A__) || defined(__AVR_ATmega88PA__) || defined(__AVR_ATmega168A__) || defined(__AVR_ATmega168PA__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
@@ -324,40 +326,40 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #23 - D23 (PB6/PCINT6/TOSC1) */
 	{
-#if	!defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
 		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		0,
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
 	},
 
 	/* #24 - D24 (PB7/PCINT7/TOSC2) */
 	{
-#if	!defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
 		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
 		0,
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* !WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
 	}
 };
 
