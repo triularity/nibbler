@@ -1,0 +1,14 @@
+gpio_init		KEYWORD2
+gpio_pin_read		KEYWORD2
+gpio_pin_readf		KEYWORD2
+gpio_pin_readv		KEYWORD2
+gpio_pin_write		KEYWORD2
+gpio_pin_writef		KEYWORD2
+gpio_pin_writev		KEYWORD2
+gpio_get_analog		KEYWORD2
+gpio_get_digital	KEYWORD2
+gpio_pin_mode		KEYWORD2
+gpio_set_reference	KEYWORD2
+gpio_get_analog_count	KEYWORD2
+gpio_get_digital_count	KEYWORD2
+gpio_get_max_value	KEYWORD2
