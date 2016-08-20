@@ -18,24 +18,26 @@ gpio_pin_mode
 	uint8_t mode
 )
 {
-	gpio_ioreg8_t		ddr;
+	gpio_iooff_t		offset;
+	gpio_ioptr8_t		ddr;
 	uint8_t			bit;
 	const gpio_timer_t *	timer;
-	gpio_ioreg8_t		tccr;
-	gpio_ioreg8_t		port;
+	gpio_ioptr8_t		tccr;
+	gpio_ioptr8_t		port;
 	uint8_t			tccr_andmask;
 
 
-	pin = _gpio_pgm_cache_pin(pin);
+	if((offset = PGM_IOOFF(pin->ddr)) == GPIO_NO_REGISTER)
+		return;
+
+	ddr = IOOFF_TO_PTR8(offset);
+	bit = PGM_BYTE(pin->bitmask);
 
 	/*
 	 * Input+Pullup is best option for AVR
 	 */
 	if(mode == GPIO_MODE_POWERDOWN)
 		mode = GPIO_MODE_INPUT_PULLUP;
-
-	ddr = OFFSET_TO_REG8(pin->ddr);
-	bit = pin->bitmask;
 
 	if(mode & GPIO_MODE_OUTPUT)
 	{
@@ -46,9 +48,9 @@ gpio_pin_mode
 		/*
 		 * Turn off the PWM timer (in case it is running)
 		 */
-		if((timer = pin->timer) != GPIO_NO_TIMER)
+		if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
 		{
-			tccr = OFFSET_TO_REG8(timer->tccr);
+			tccr = IOOFF_TO_PTR8(timer->tccr);
 			tccr_andmask = timer->tccr_andmask;
 			*tccr &= tccr_andmask;
 		}
@@ -58,7 +60,7 @@ gpio_pin_mode
 		/* +Pullup */
 		if(mode & GPIO_MODE_PULLUP)
 		{
-			port = OFFSET_TO_REG8(pin->port);
+			port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
 			*port &= ~bit;
 		}
 	}

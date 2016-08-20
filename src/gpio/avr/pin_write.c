@@ -17,27 +17,29 @@ gpio_pin_write
 	gpio_state_t state
 )
 {
+	gpio_iooff_t		offset;
 	const gpio_timer_t *	timer;
-	gpio_ioreg8_t		port;
+	gpio_ioptr8_t		port;
+	uint8_t			bitmask;
 
 
-	pin = _gpio_pgm_cache_pin(pin);
 //_gpio_pin_dump(pin);
-
-	if(pin->port != GPIO_NO_REGISTER)
+	if((offset = PGM_IOOFF(pin->port)) != GPIO_NO_REGISTER)
 	{
-		port = OFFSET_TO_REG8(pin->port);
+		port = IOOFF_TO_PTR8(offset);
 
 		/*
 		 * Turn off the PWM timer (in case it is running)
 		 */
-		if((timer = pin->timer) != GPIO_NO_TIMER)
+		if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
 			_gpio_pwm_stop(timer);
 
+		bitmask = PGM_BYTE(pin->bitmask);
+
 		if(state)
-			*port |= pin->bitmask;
+			*port |= bitmask;
 		else
-			*port &= ~pin->bitmask;
+			*port &= ~bitmask;
 	}
 	else
 	{

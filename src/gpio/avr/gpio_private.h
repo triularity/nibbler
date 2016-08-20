@@ -18,22 +18,28 @@
 extern "C" {
 #endif
 
+#define	PGM_PTR(x)		((void *) pgm_read_word(&(x)))
+#define	PGM_BYTE(x)		pgm_read_byte(&(x))
+#define	PGM_WORD(x)		pgm_read_word(&(x))
+
 /*
  * I/O register conversions
  */
-typedef	volatile uint8_t *	gpio_ioreg8_t;
-typedef	volatile uint16_t *	gpio_ioreg16_t;
+typedef	volatile uint8_t *	gpio_ioptr8_t;
+typedef	volatile uint16_t *	gpio_ioptr16_t;
 
 #ifdef	OPT_HIGH_IOM
-typedef	uint16_t		gpio_ioaddr_t;
-#define	REG_TO_OFFSET(reg)	((gpio_ioaddr_t) &(reg))
+typedef	uint16_t		gpio_iooff_t;
+#define	REG_TO_OFFSET(reg)	((gpio_iooff_t) &(reg))
+#define	PGM_IOOFF(x)		PGM_WORD(x)
 #else
-typedef	uint8_t			gpio_ioaddr_t;
-#define	REG_TO_OFFSET(reg)	((gpio_ioaddr_t) (uint16_t) &(reg))
+typedef	uint8_t			gpio_iooff_t;
+#define	REG_TO_OFFSET(reg)	((gpio_iooff_t) (uint16_t) &(reg))
+#define	PGM_IOOFF(x)		PGM_BYTE(x)
 #endif
 
-#define	OFFSET_TO_REG8(offset)	((gpio_ioreg8_t) (uint16_t) (offset))
-#define	OFFSET_TO_REG16(offset)	((gpio_ioreg16_t) (uint16_t) (offset))
+#define	IOOFF_TO_PTR8(offset)	((gpio_ioptr8_t) (uint16_t) (offset))
+#define	IOOFF_TO_PTR16(offset)	((gpio_ioptr16_t) (uint16_t) (offset))
 
 /*
  * No register
@@ -55,10 +61,10 @@ typedef struct _gpio_timer
 #ifndef	WITHOUT_HIRES_TIMERS
 	uint8_t			flags;
 #endif
-	gpio_ioaddr_t		tccr;		/* &TCCRx */
+	gpio_iooff_t		tccr;		/* &TCCRx */
 	uint8_t			tccr_andmask;	/* TCCR AND bitmask */
 	uint8_t			tccr_enable;	/* TCCR enable bits */
-	gpio_ioaddr_t		ocr;		/* &OCRx */
+	gpio_iooff_t		ocr;		/* &OCRx */
 } gpio_timer_t;
 
 /*
@@ -74,9 +80,9 @@ typedef struct _gpio_timer
 struct _gpio_pin
 {
 	/* Digital */
-	gpio_ioaddr_t		ddr;		/* &DDRx */
-	gpio_ioaddr_t		port;		/* &PORTx */
-	gpio_ioaddr_t		pin;		/* &PINx */
+	gpio_iooff_t		ddr;		/* &DDRx */
+	gpio_iooff_t		port;		/* &PORTx */
+	gpio_iooff_t		pin;		/* &PINx */
 	uint8_t			bitmask;	/* Register value bitmask */
 
 	/* ADC */

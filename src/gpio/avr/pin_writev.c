@@ -9,6 +9,7 @@
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
+#include "debug.h"
 
 
 void
@@ -20,10 +21,11 @@ gpio_pin_writev
 {
 	const gpio_timer_t *	timer;
 	gpio_state_t		state;
-	gpio_ioreg8_t		port;
+	gpio_iooff_t		offset;
+	gpio_ioptr8_t		port;
+	uint8_t			bitmask;
 
 
-	pin = _gpio_pgm_cache_pin(pin);
 //_gpio_pin_dump(pin);
 
 	if(value == 0)
@@ -36,7 +38,7 @@ _nibbler_println(" *** Low");
 _nibbler_println(" *** High");
 		state = GPIO_HIGH;
 	}
-	else if((timer = pin->timer) != GPIO_NO_TIMER)
+	else if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
 	{
 		_gpio_pwm_start(timer, value);
 
@@ -54,13 +56,14 @@ _nibbler_println(" *** Snap");
 		state = (value > (GPIO_VALUE_MAX / 2));
 	}
 
-	if(pin->port != GPIO_NO_REGISTER)
+	if((offset = PGM_IOOFF(pin->port)) != GPIO_NO_REGISTER)
 	{
-		port = OFFSET_TO_REG8(pin->port);
+		port = IOOFF_TO_PTR8(offset);
+		bitmask = PGM_BYTE(pin->bitmask);
 
 		if(state)
-			*port |= pin->bitmask;
+			*port |= bitmask;
 		else
-			*port &= ~pin->bitmask;
+			*port &= ~bitmask;
 	}
 }
