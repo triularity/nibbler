@@ -35,6 +35,7 @@ gpio_pin_read
 	}
 	else
 	{
+		/* No input */
 		return GPIO_LOW;
 	}
 }
