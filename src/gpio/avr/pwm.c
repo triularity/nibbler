@@ -6,6 +6,7 @@
  */
 
 #include <stdint.h>
+#include <util/atomic.h>
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
@@ -32,7 +33,10 @@ _gpio_pwm_start
 	tccr_andmask = PGM_BYTE(timer->tccr_andmask);
 	tccr_enable = PGM_BYTE(timer->tccr_enable);
 
-	*tccr = (*tccr & tccr_andmask) | tccr_enable;
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		*tccr = (*tccr & tccr_andmask) | tccr_enable;
+	}
 
 	ocr = IOOFF_TO_PTR8(PGM_IOOFF(timer->ocr));
 
@@ -48,17 +52,23 @@ _gpio_pwm_start
 		case GPIO_TIMER_TYPE_10BIT:
 			duty = GPIO_VALUE_TO_10BIT(value);
 
-			/* MUST write high byte first, per AVR specs */
-			*ocr = (uint8_t) (duty >> 8);
-			*(ocr+1) = (uint8_t) (duty & 0xFF);
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				/* MUST write high byte first, per AVR specs */
+				*ocr = (uint8_t) (duty >> 8);
+				*(ocr+1) = (uint8_t) (duty & 0xFF);
+			}
 			break;
 
 		case GPIO_TIMER_TYPE_16BIT:
 			duty = GPIO_VALUE_TO_16BIT(value);
 
-			/* MUST write high byte first, per AVR specs */
-			*ocr = (uint8_t) (duty >> 8);
-			*(ocr+1) = (uint8_t) (duty & 0xFF);
+			ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+			{
+				/* MUST write high byte first, per AVR specs */
+				*ocr = (uint8_t) (duty >> 8);
+				*(ocr+1) = (uint8_t) (duty & 0xFF);
+			}
 			break;
 	}
 #endif	/* !WITHOUT_HIRES_TIMERS */
@@ -78,5 +88,9 @@ _gpio_pwm_stop
 //_gpio_timer_dump(timer);
 	tccr = IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr));
 	tccr_andmask = PGM_BYTE(timer->tccr_andmask);
-	*tccr &= tccr_andmask;
+
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		*tccr &= tccr_andmask;
+	}
 }

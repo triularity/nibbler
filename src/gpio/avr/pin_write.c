@@ -5,6 +5,7 @@
  * http://www.triularity.org/
  */
 
+#include <util/atomic.h>
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
@@ -29,10 +30,13 @@ gpio_pin_write
 		port = IOOFF_TO_PTR8(offset);
 		bitmask = PGM_BYTE(pin->bitmask);
 
-		if(state)
-			*port |= bitmask;
-		else
-			*port &= ~bitmask;
+		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+		{
+			if(state)
+				*port |= bitmask;
+			else
+				*port &= ~bitmask;
+		}
 
 		/*
 		 * Turn off the PWM timer (in case it is running)

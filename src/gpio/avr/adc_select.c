@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <avr/io.h>
+#include <util/atomic.h>
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
@@ -32,7 +33,9 @@
 
 #if	defined(REFS2)
 #define	_MK_REFS(ref)	(_MK_REFS0_1(ref)|_MK_REFS2(ref))
-#elif	defined(REFS1)
+#endif
+
+#if	defined(REFS1)
 #define	_MK_REFSL(ref)	_MK_REFS0_1(ref)
 #elif	defined(REFS0)
 #define	_MK_REFSL(ref)	_MK_REFS0(ref)
@@ -144,12 +147,15 @@ _gpio_adc_select
 //_nibbler_printhexln(ADMUX);
 
 #ifdef	ADCSRB
-	/* This may become 'ADCSRB = ADCSRB' if no-op macros not filtered */
+	/* This may become 'ADCSRB = ADCSRB' if no-op macros aren't filtered */
 #if	_ADCSRB_ADD_ADLAR(_ADCSRB_ADD_MUX(_ADCSRB_ADD_REFS(0,1),1)) != 0
-	ADCSRB = _ADCSRB_ADD_ADLAR(
-		_ADCSRB_ADD_MUX(
-			_ADCSRB_ADD_REFS(ADCSRB, _gpio_adc_reference),
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	{
+		ADCSRB = _ADCSRB_ADD_ADLAR(
+			_ADCSRB_ADD_MUX(
+				_ADCSRB_ADD_REFS(ADCSRB, _gpio_adc_reference),
 				mux));
+	}
 //_nibbler_print("ADCSRB = 0x");
 //_nibbler_printhexln(ADCSRB);
 #endif

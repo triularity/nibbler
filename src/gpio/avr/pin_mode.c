@@ -6,6 +6,7 @@
  */
 
 #include <stdint.h>
+#include <util/atomic.h>
 #include <nibbler/gpio.h>
 
 #include "gpio_private.h"
@@ -22,26 +23,30 @@ gpio_pin_mode
 	gpio_ioptr8_t		ddr;
 	uint8_t			bit;
 	const gpio_timer_t *	timer;
-	gpio_ioptr8_t		tccr;
 	gpio_ioptr8_t		port;
-	uint8_t			tccr_andmask;
 
 
+	/*
+	 * Not a digital pin?
+	 */
 	if((offset = PGM_IOOFF(pin->ddr)) == GPIO_NO_REGISTER)
-		return;
+		return 0;
 
 	ddr = IOOFF_TO_PTR8(offset);
 	bit = PGM_BYTE(pin->bitmask);
 
 	/*
-	 * Input+Pullup is best option for AVR
+	 * Input+Pullup is best low power option for AVR
 	 */
 	if(mode == GPIO_MODE_POWERDOWN)
 		mode = GPIO_MODE_INPUT_PULLUP;
 
 	if(mode & GPIO_MODE_OUTPUT)
 	{
-		*ddr |= bit;
+		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+		{
+			*ddr |= bit;
+		}
 	}
 	else
 	{
@@ -49,19 +54,19 @@ gpio_pin_mode
 		 * Turn off the PWM timer (in case it is running)
 		 */
 		if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
-		{
-			tccr = IOOFF_TO_PTR8(timer->tccr);
-			tccr_andmask = timer->tccr_andmask;
-			*tccr &= tccr_andmask;
-		}
+			_gpio_pwm_stop(timer);
 
-		*ddr &= ~bit;
+		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
 
-		/* +Pullup */
-		if(mode & GPIO_MODE_PULLUP)
+		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 		{
-			port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
-			*port &= ~bit;
+			*ddr &= ~bit;
+
+			/* +Pullup? */
+			if(mode & GPIO_MODE_PULLUP)
+				*port |= bit;
+			else
+				*port &= ~bit;
 		}
 	}
 
