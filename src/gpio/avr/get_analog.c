@@ -23,7 +23,10 @@ gpio_get_analog
 	if(pinno >= GPIO_ANALOG_PIN_COUNT)
 		return GPIO_NO_PIN;
 
-	index = pgm_read_byte_near(&_gpio_analog_to_digital_pins[pinno]);
+	index = PGM_BYTE(_gpio_analog_to_digital_pins[pinno]);
+
+	if(index == GPIO_NO_PIN_INDEX)
+		return GPIO_NO_PIN;
 
 	return (gpio_pin_t) &_gpio_pins[index];
 }
