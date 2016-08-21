@@ -66,15 +66,15 @@ _gpio_timer_dump
 	Serial.println("]:");
 
 	Serial.print("  flags       = 0x");
-	Serial.println((uint8_t) timer->flags, HEX);
+	Serial.println((uint8_t) PGM_BYTE(timer->flags), HEX);
 	Serial.print("  tccr        = 0x");
-	Serial.println((uint16_t) OFFSET_TO_REG8(timer->tccr), HEX);
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr)), HEX);
 	Serial.print("  tccr_andmask = 0x");
-	Serial.println((uint8_t) timer->tccr_andmask, HEX);
+	Serial.println((uint8_t) PGM_BYTE(timer->tccr_andmask), HEX);
 	Serial.print("  tccr_enable  = 0x");
-	Serial.println((uint8_t) timer->tccr_enable, HEX);
+	Serial.println((uint8_t) PGM_BYTE(timer->tccr_enable), HEX);
 	Serial.print("  ocr         = 0x");
-	Serial.println((uint16_t) OFFSET_TO_REG8(timer->ocr), HEX);
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(timer->ocr)), HEX);
 }
 
 
@@ -90,17 +90,17 @@ _gpio_pin_dump
 	Serial.println("]:");
 
 	Serial.print("  ddr = 0x");
-	Serial.println((uint16_t) OFFSET_TO_REG8(pin->ddr), HEX);
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->ddr)), HEX);
 	Serial.print("  port = 0x");
-	Serial.println((uint16_t) OFFSET_TO_REG8(pin->port), HEX);
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->port)), HEX);
 	Serial.print("  pin = 0x");
-	Serial.println((uint16_t) OFFSET_TO_REG8(pin->pin), HEX);
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->pin)), HEX);
 	Serial.print("  bitmask = 0x");
-	Serial.println(pin->bitmask, HEX);
+	Serial.println(PGM_BYTE(pin->bitmask), HEX);
 	Serial.print("  mux = ");
-	Serial.println(pin->mux);
+	Serial.println(PGM_BYTE(pin->mux));
 	Serial.print("  timer = 0x");
-	Serial.println((uint16_t) pin->timer, HEX);
+	Serial.println((uint16_t) PGM_PTR(pin->timer), HEX);
 }
 
 #endif	/* ARDUINO */
