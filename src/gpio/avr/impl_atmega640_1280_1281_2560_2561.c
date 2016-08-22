@@ -913,7 +913,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #54 - A0 (PF0/ADC0) */
+	/* #54 - D54/A0 (PF0/ADC0) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -923,7 +923,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #55 - A1 (PF1/ADC1) */
+	/* #55 - D55/A1 (PF1/ADC1) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -933,7 +933,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #56 - A2 (PF2/ADC2) */
+	/* #56 - D56/A2 (PF2/ADC2) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -943,7 +943,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #57 - A3 (PF3/ADC3) */
+	/* #57 - D57/A3 (PF3/ADC3) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -953,7 +953,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #58 - A4 (PF4/ADC4) */
+	/* #58 - D58/A4 (PF4/ADC4) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -963,7 +963,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #59 - A5 (PF5/ADC5) */
+	/* #59 - D59/A5 (PF5/ADC5) */
 	{
 		REG_TO_OFFSET(DDRF),
 		REG_TO_OFFSET(PORTF),
@@ -1399,12 +1399,12 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 {
-	54,	/* A0 */
-	55,	/* A1 */
-	56,	/* A2 */
-	57,	/* A3 */
-	58,	/* A4 */
-	59,	/* A5 */
+	54,	/* A0 -> D54 */
+	55,	/* A1 -> D55 */
+	56,	/* A2 -> D56 */
+	57,	/* A3 -> D57 */
+	58,	/* A4 -> D58 */
+	59,	/* A5 -> D59 */
 	60,	/* A6 -> D60 */
 	61,	/* A7 -> D61 */
 	62,	/* A8 -> D62 */
