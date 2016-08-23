@@ -16,28 +16,32 @@
 
 uint8_t			_gpio_adc_reference = 0;
 
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_0A =
+static const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR0A),
-	(uint8_t) ~((1<<COM0A1)|(1<<COM0A0)),
-	(1<<COM0A1),
-	REG_TO_OFFSET(OCR0A)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
+	/* timer_0A */
+	{
 #ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_0B =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR0A),
-	(uint8_t) ~((1<<COM0B1)|(1<<COM0B0)),
-	(1<<COM0B1),
-	REG_TO_OFFSET(OCR0B)
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0A1)|(1<<COM0A0)),
+		(1<<COM0A1),
+		REG_TO_OFFSET(OCR0A)
+	},
+	/* timer_0B */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0B1)|(1<<COM0B0)),
+		(1<<COM0B1),
+		REG_TO_OFFSET(OCR0B)
+	}
 };
-#endif	/* !WITHOUT_HIRES_TIMERS */
+
+#define	timer_0A	_gpio_timers[0]
+#define	timer_0B	_gpio_timers[1]
 
 
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =

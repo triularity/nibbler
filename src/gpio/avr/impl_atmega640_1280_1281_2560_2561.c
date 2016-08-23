@@ -16,171 +16,175 @@
 
 uint8_t			_gpio_adc_reference = 0;
 
-
-static const gpio_timer_t PROGMEM	timer_0A =
+static const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
+	/* timer_0A */
+	{
 #ifndef	WITHOUT_HIRES_TIMERS
-	GPIO_TIMER_TYPE_8BIT,
+		GPIO_TIMER_TYPE_8BIT,
 #endif
-	REG_TO_OFFSET(TCCR0A),
-	(uint8_t) ~((1<<COM0A1)|(1<<COM0A0)),
-	(1<<COM0A1),
-	REG_TO_OFFSET(OCR0A)
-};
-
-static const gpio_timer_t PROGMEM	timer_0B =
-{
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0A1)|(1<<COM0A0)),
+		(1<<COM0A1),
+		REG_TO_OFFSET(OCR0A)
+	},
+	/* timer_0B */
+	{
 #ifndef	WITHOUT_HIRES_TIMERS
-	GPIO_TIMER_TYPE_8BIT,
+		GPIO_TIMER_TYPE_8BIT,
 #endif
-	REG_TO_OFFSET(TCCR0A),
-	(uint8_t) ~((1<<COM0B1)|(1<<COM0B0)),
-	(1<<COM0B1),
-	REG_TO_OFFSET(OCR0B)
-};
-
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0B1)|(1<<COM0B0)),
+		(1<<COM0B1),
+		REG_TO_OFFSET(OCR0B)
+	},
+	/* timer_1A */
+	{
 #ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_1A =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR1A),
-	(uint8_t) ~((1<<COM1A1)|(1<<COM1A0)),
-	(1<<COM1A1),
-	REG_TO_OFFSET(OCR1A)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_1B =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR1A),
-	(uint8_t) ~((1<<COM1B1)|(1<<COM1B0)),
-	(1<<COM1B1),
-	REG_TO_OFFSET(OCR1B)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-static const gpio_timer_t PROGMEM	timer_2A =
-{
-#ifndef	WITHOUT_HIRES_TIMERS
-	GPIO_TIMER_TYPE_8BIT,
+		GPIO_TIMER_TYPE_16BIT,
 #endif
-	REG_TO_OFFSET(TCCR2A),
-	(uint8_t) ~((1<<COM2A1)|(1<<COM2A0)),
-	(1<<COM2A1),
-	REG_TO_OFFSET(OCR2A)
-};
-
-static const gpio_timer_t PROGMEM	timer_2B =
-{
+		REG_TO_OFFSET(TCCR1A),
+		(uint8_t) ~((1<<COM1A1)|(1<<COM1A0)),
+		(1<<COM1A1),
+		REG_TO_OFFSET(OCR1A)
+	},
+	/* timer_1B */
+	{
 #ifndef	WITHOUT_HIRES_TIMERS
-	GPIO_TIMER_TYPE_8BIT,
+		GPIO_TIMER_TYPE_16BIT,
 #endif
-	REG_TO_OFFSET(TCCR2A),
-	(uint8_t) ~((1<<COM2B1)|(1<<COM2B0)),
-	(1<<COM2B1),
-	REG_TO_OFFSET(OCR2B)
+		REG_TO_OFFSET(TCCR1A),
+		(uint8_t) ~((1<<COM1B1)|(1<<COM1B0)),
+		(1<<COM1B1),
+		REG_TO_OFFSET(OCR1B)
+	},
+	/* timer_2A */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_8BIT,
+#endif
+		REG_TO_OFFSET(TCCR2A),
+		(uint8_t) ~((1<<COM2A1)|(1<<COM2A0)),
+		(1<<COM2A1),
+		REG_TO_OFFSET(OCR2A)
+	},
+	/* timer_2B */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_8BIT,
+#endif
+		REG_TO_OFFSET(TCCR2A),
+		(uint8_t) ~((1<<COM2B1)|(1<<COM2B0)),
+		(1<<COM2B1),
+		REG_TO_OFFSET(OCR2B)
+	},
+	/* timer_3A */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR3A),
+		(uint8_t) ~((1<<COM3A1)|(1<<COM3A0)),
+		(1<<COM3A1),
+		REG_TO_OFFSET(OCR3A)
+	},
+	/* timer_3B */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR3A),
+		(uint8_t) ~((1<<COM3B1)|(1<<COM3B0)),
+		(1<<COM3B1),
+		REG_TO_OFFSET(OCR3B)
+	},
+	/* timer_3C */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR3A),
+		(uint8_t) ~((1<<COM3C1)|(1<<COM3C0)),
+		(1<<COM3C1),
+		REG_TO_OFFSET(OCR3C)
+	},
+	/* timer_4A */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR4A),
+		(uint8_t) ~((1<<COM4A1)|(1<<COM4A0)),
+		(1<<COM4A1),
+		REG_TO_OFFSET(OCR4A)
+	},
+	/* timer_4B */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR4A),
+		(uint8_t) ~((1<<COM4B1)|(1<<COM4B0)),
+		(1<<COM4B1),
+		REG_TO_OFFSET(OCR4B)
+	},
+	/* timer_4C */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR4A),
+		(uint8_t) ~((1<<COM4C1)|(1<<COM4C0)),
+		(1<<COM4C1),
+		REG_TO_OFFSET(OCR4C)
+	},
+	/* timer_5A */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR5A),
+		(uint8_t) ~((1<<COM5A1)|(1<<COM5A0)),
+		(1<<COM5A1),
+		REG_TO_OFFSET(OCR5A)
+	},
+	/* timer_5B */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR5A),
+		(uint8_t) ~((1<<COM5B1)|(1<<COM5B0)),
+		(1<<COM5B1),
+		REG_TO_OFFSET(OCR5B)
+	},
+	/* timer_5C */
+	{
+#ifndef	WITHOUT_HIRES_TIMERS
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR5A),
+		(uint8_t) ~((1<<COM5C1)|(1<<COM5C0)),
+		(1<<COM5C1),
+		REG_TO_OFFSET(OCR5C)
+	}
 };
 
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_3A =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR3A),
-	(uint8_t) ~((1<<COM3A1)|(1<<COM3A0)),
-	(1<<COM3A1),
-	REG_TO_OFFSET(OCR3A)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_3B =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR3A),
-	(uint8_t) ~((1<<COM3B1)|(1<<COM3B0)),
-	(1<<COM3B1),
-	REG_TO_OFFSET(OCR3B)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_3C =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR3A),
-	(uint8_t) ~((1<<COM3C1)|(1<<COM3C0)),
-	(1<<COM3C1),
-	REG_TO_OFFSET(OCR3C)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_4A =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR4A),
-	(uint8_t) ~((1<<COM4A1)|(1<<COM4A0)),
-	(1<<COM4A1),
-	REG_TO_OFFSET(OCR4A)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_4B =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR4A),
-	(uint8_t) ~((1<<COM4B1)|(1<<COM4B0)),
-	(1<<COM4B1),
-	REG_TO_OFFSET(OCR4B)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_4C =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR4A),
-	(uint8_t) ~((1<<COM4C1)|(1<<COM4C0)),
-	(1<<COM4C1),
-	REG_TO_OFFSET(OCR4C)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_5A =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR5A),
-	(uint8_t) ~((1<<COM5A1)|(1<<COM5A0)),
-	(1<<COM5A1),
-	REG_TO_OFFSET(OCR5A)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_5B =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR5A),
-	(uint8_t) ~((1<<COM5B1)|(1<<COM5B0)),
-	(1<<COM5B1),
-	REG_TO_OFFSET(OCR5B)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
-
-#ifndef	WITHOUT_HIRES_TIMERS
-static const gpio_timer_t PROGMEM	timer_5C =
-{
-	GPIO_TIMER_TYPE_16BIT,
-	REG_TO_OFFSET(TCCR5A),
-	(uint8_t) ~((1<<COM5C1)|(1<<COM5C0)),
-	(1<<COM5C1),
-	REG_TO_OFFSET(OCR5C)
-};
-#endif	/* !WITHOUT_HIRES_TIMERS */
+#define	timer_0A	_gpio_timers[0]
+#define	timer_0B	_gpio_timers[1]
+#define	timer_1A	_gpio_timers[2]
+#define	timer_1B	_gpio_timers[3]
+#define	timer_2A	_gpio_timers[4]
+#define	timer_2B	_gpio_timers[5]
+#define	timer_3A	_gpio_timers[6]
+#define	timer_3B	_gpio_timers[7]
+#define	timer_3C	_gpio_timers[8]
+#define	timer_4A	_gpio_timers[9]
+#define	timer_4B	_gpio_timers[10]
+#define	timer_4C	_gpio_timers[11]
+#define	timer_5A	_gpio_timers[12]
+#define	timer_5B	_gpio_timers[13]
+#define	timer_5C	_gpio_timers[14]
 
 
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
