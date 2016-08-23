@@ -44,9 +44,6 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 {
 	/* #0 - D0/A0 (PB0/ADC0/OC0A/PCINT0) */
 	{
-		REG_TO_OFFSET(DDRB),
-		REG_TO_OFFSET(PORTB),
-		REG_TO_OFFSET(PINB),
 		(1 << 0), /* DDRB0/PORTB0/PINB0 */
 		0,
 #ifndef	WITHOUT_HIRES_TIMERS
@@ -58,9 +55,6 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #1 - D1/A1 (PB1/ADC1/OC0B/PCINT1) */
 	{
-		REG_TO_OFFSET(DDRB),
-		REG_TO_OFFSET(PORTB),
-		REG_TO_OFFSET(PINB),
 		(1 << 1), /* DDRB1/PORTB1/PINB1 */
 		1,
 #ifndef	WITHOUT_HIRES_TIMERS
@@ -72,9 +66,6 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #2 - D2/A2 (PB2/ADC2/PCINT2) */
 	{
-		REG_TO_OFFSET(DDRB),
-		REG_TO_OFFSET(PORTB),
-		REG_TO_OFFSET(PINB),
 		(1 << 2), /* DDRB2/PORTB2/PINB2 */
 		2,
 		GPIO_NO_TIMER
@@ -82,9 +73,6 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #3 - D3/A3 (PB3/ADC3/PCINT3) */
 	{
-		REG_TO_OFFSET(DDRB),
-		REG_TO_OFFSET(PORTB),
-		REG_TO_OFFSET(PINB),
 		(1 << 3), /* DDRB3/PORTB3/PINB3 */
 		3,
 		GPIO_NO_TIMER

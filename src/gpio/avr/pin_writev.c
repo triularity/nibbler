@@ -22,9 +22,14 @@ gpio_pin_writev
 {
 	const gpio_timer_t *	timer;
 	gpio_state_t		state;
-	gpio_iooff_t		offset;
-	gpio_ioptr8_t		port;
 	uint8_t			bitmask;
+
+#ifdef	OPT_SINGLE_PORT
+#define	_PORT	OPT_SINGLE_PORT
+#else
+	gpio_ioptr8_t		port;
+#define	_PORT	*port
+#endif
 
 
 //_gpio_pin_dump(pin);
@@ -57,17 +62,18 @@ _nibbler_println(" *** Snap");
 		state = (value > (GPIO_VALUE_MAX / 2));
 	}
 
-	if((offset = PGM_IOOFF(pin->port)) != GPIO_NO_REGISTER)
+	if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
-		port = IOOFF_TO_PTR8(offset);
-		bitmask = PGM_BYTE(pin->bitmask);
+#ifndef	OPT_SINGLE_PORT
+		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
+#endif
 
 		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 		{
 			if(state)
-				*port |= bitmask;
+				_PORT |= bitmask;
 			else
-				*port &= ~bitmask;
+				_PORT &= ~bitmask;
 		}
 	}
 }

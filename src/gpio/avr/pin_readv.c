@@ -17,21 +17,27 @@ gpio_pin_readv
 )
 {
 	uint8_t		mux;
-	gpio_iooff_t	offset;
-	gpio_ioptr8_t	reg;
 	uint8_t		bitmask;
+
+#ifdef	OPT_SINGLE_PIN
+#define	_PIN	OPT_SINGLE_PIN
+#else
+	gpio_ioptr8_t	reg;
+#define	_PIN	*reg
+#endif
 
 
 	if((mux = PGM_BYTE(pin->mux)) != GPIO_NO_ADC)
 	{
 		return _gpio_adc_read(mux);
 	}
-	else if((offset = PGM_IOOFF(pin->pin)) != GPIO_NO_REGISTER)
+	else if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
-		reg = IOOFF_TO_PTR8(offset);
-		bitmask = PGM_BYTE(pin->bitmask);
+#ifndef	OPT_SINGLE_PIN
+		reg = IOOFF_TO_PTR8(PGM_IOOFF(pin->pin));
+#endif
 
-		return (*reg & bitmask) ? GPIO_VALUE_MAX : 0;
+		return (_PIN & bitmask) ? GPIO_VALUE_MAX : 0;
 	}
 	else
 	{

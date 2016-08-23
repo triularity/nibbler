@@ -67,6 +67,9 @@
 #if	defined(__AVR_ATtiny13__) || defined(__AVR_ATtiny13A__)
 #define	GPIO_PIN_COUNT 6
 #define	GPIO_ANALOG_PIN_COUNT 4
+#define	OPT_SINGLE_DDR DDRB
+#define	OPT_SINGLE_PIN PINB
+#define	OPT_SINGLE_PORT PORTB
 #define	OPT_ADMUX_ADLAR
 #endif
 
@@ -97,6 +100,9 @@
 #if	defined(__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
 #define	GPIO_PIN_COUNT 6
 #define	GPIO_ANALOG_PIN_COUNT 4
+#define	OPT_SINGLE_DDR DDRB
+#define	OPT_SINGLE_PIN PINB
+#define	OPT_SINGLE_PORT PORTB
 #define	OPT_ADMUX_REFS2
 #define	OPT_ADMUX_ADLAR
 #endif
@@ -120,6 +126,9 @@
 #if	defined(__AVR_ATtiny4__) || defined(__AVR_ATtiny5__) || defined(__AVR_ATtiny9__) || defined(__AVR_ATtiny10__)
 #define	GPIO_PIN_COUNT 4
 #define	GPIO_ANALOG_PIN_COUNT 4
+#define	OPT_SINGLE_DDR DDRB
+#define	OPT_SINGLE_PIN PINB
+#define	OPT_SINGLE_PORT PORTB
 #endif
 
 #if	defined(__AVR_ATtiny828__)

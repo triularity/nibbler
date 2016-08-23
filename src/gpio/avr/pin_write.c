@@ -18,24 +18,33 @@ gpio_pin_write
 	gpio_state_t state
 )
 {
-	gpio_iooff_t		offset;
-	gpio_ioptr8_t		port;
 	uint8_t			bitmask;
 	const gpio_timer_t *	timer;
 
+#ifdef	OPT_SINGLE_PORT
+#define	_PORT	OPT_SINGLE_PORT
+#else
+	gpio_ioptr8_t		port;
+#define	_PORT	*port
+#endif
+
 
 //_gpio_pin_dump(pin);
-	if((offset = PGM_IOOFF(pin->port)) != GPIO_NO_REGISTER)
+	/*
+	 * Not a digital pin?
+	 */
+	if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
-		port = IOOFF_TO_PTR8(offset);
-		bitmask = PGM_BYTE(pin->bitmask);
+#ifndef	OPT_SINGLE_PORT
+		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
+#endif
 
 		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 		{
 			if(state)
-				*port |= bitmask;
+				_PORT |= bitmask;
 			else
-				*port &= ~bitmask;
+				_PORT &= ~bitmask;
 		}
 
 		/*
