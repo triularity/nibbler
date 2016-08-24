@@ -15,18 +15,21 @@
 void
 _gpio_pwm_start
 (
-	const gpio_timer_t *timer,
+	uint8_t index,
 	gpio_value_t value
 )
 {
-	gpio_ioptr8_t	tccr;
-	gpio_ioptr8_t	ocr;
-	uint8_t		tccr_andmask;
-	uint8_t		tccr_enable;
+	const gpio_timer_t *	timer;
+	gpio_ioptr8_t		tccr;
+	gpio_ioptr8_t		ocr;
+	uint8_t			tccr_andmask;
+	uint8_t			tccr_enable;
 #ifndef	WITHOUT_HIRES_TIMERS
-	uint16_t	duty;
+	uint16_t		duty;
 #endif
 
+
+	timer = &_gpio_timers[index];
 //_gpio_timer_dump(timer);
 
 	tccr = IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr));
@@ -78,14 +81,17 @@ _gpio_pwm_start
 void
 _gpio_pwm_stop
 (
-	const gpio_timer_t *timer
+	uint8_t index
 )
 {
-	gpio_ioptr8_t	tccr;
-	uint8_t		tccr_andmask;
+	const gpio_timer_t *	timer;
+	gpio_ioptr8_t		tccr;
+	uint8_t			tccr_andmask;
 
 
+	timer = &_gpio_timers[index];
 //_gpio_timer_dump(timer);
+
 	tccr = IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr));
 	tccr_andmask = PGM_BYTE(timer->tccr_andmask);
 

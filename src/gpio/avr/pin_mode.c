@@ -21,7 +21,7 @@ gpio_pin_mode
 {
 	gpio_iooff_t		offset;
 	uint8_t			bitmask;
-	const gpio_timer_t *	timer;
+	uint8_t			timer;
 
 #ifdef	OPT_SINGLE_DDR
 #define	_DDR	OPT_SINGLE_DDR
@@ -66,7 +66,7 @@ gpio_pin_mode
 		/*
 		 * Turn off the PWM timer (in case it is running)
 		 */
-		if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
+		if((timer = PGM_BYTE(pin->timer)) != GPIO_NO_TIMER)
 			_gpio_pwm_stop(timer);
 
 #ifndef	OPT_SINGLE_PORT

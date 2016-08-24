@@ -16,7 +16,7 @@
 
 uint8_t			_gpio_adc_reference = 0;
 
-static const gpio_timer_t PROGMEM	_gpio_timers[] =
+const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_1A */
 	{
@@ -39,9 +39,6 @@ static const gpio_timer_t PROGMEM	_gpio_timers[] =
 		REG_TO_OFFSET(OCR1B)
 	}
 };
-
-#define	timer_1A	_gpio_timers[0]
-#define	timer_1B	_gpio_timers[1]
 
 
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
@@ -144,7 +141,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 1), /* DDRB1/PORTB1/PINB1 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1A
+		0 /* timer_1A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -158,7 +155,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 2), /* DDRB2/PORTB2/PINB2 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1B
+		1 /* timer_1B */
 #else
 		GPIO_NO_TIMER
 #endif

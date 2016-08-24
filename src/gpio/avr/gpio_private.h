@@ -18,7 +18,6 @@
 extern "C" {
 #endif
 
-#define	PGM_PTR(x)		((void *) pgm_read_word(&(x)))
 #define	PGM_BYTE(x)		pgm_read_byte(&(x))
 #define	PGM_WORD(x)		pgm_read_word(&(x))
 
@@ -75,7 +74,26 @@ typedef struct _gpio_timer
 /*
  * No timer
  */
-#define	GPIO_NO_TIMER		((gpio_timer_t *) 0)
+#define	GPIO_NO_TIMER		0xFF
+
+/*
+ * Port data
+ */
+struct _gpio_port
+{
+	/* Digital */
+#ifndef	OPT_SINGLE_DDR
+	gpio_iooff_t		ddr;		/* &DDRx */
+#endif
+
+#ifndef	OPT_SINGLE_PORT
+	gpio_iooff_t		port;		/* &PORTx */
+#endif
+
+#ifndef	OPT_SINGLE_PIN
+	gpio_iooff_t		pin;		/* &PINx */
+#endif
+};
 
 struct _gpio_pin
 {
@@ -98,7 +116,7 @@ struct _gpio_pin
 	uint8_t			mux;		/* ADC channel selection */
 
 	/* PWM */
-	const gpio_timer_t *	timer;
+	uint8_t			timer;
 };
 
 /*
@@ -109,6 +127,7 @@ struct _gpio_pin
 
 extern const struct _gpio_pin PROGMEM	_gpio_pins[];
 extern const uint8_t PROGMEM		_gpio_analog_to_digital_pins[];
+extern const struct _gpio_timer PROGMEM	_gpio_timers[];
 
 
 extern uint8_t			_gpio_adc_reference;
@@ -117,11 +136,8 @@ extern uint8_t			_gpio_adc_reference;
 gpio_value_t			_gpio_adc_read(uint8_t mux);
 void				_gpio_adc_select(uint8_t mux);
 
-void				_gpio_pwm_start(const gpio_timer_t *timer, gpio_value_t value);
-void				_gpio_pwm_stop(const gpio_timer_t *timer);
-
-gpio_pin_t			_gpio_pgm_cache_pin(gpio_pin_t pin);
-const gpio_timer_t *		_gpio_pgm_cache_timer(const gpio_timer_t * timer);
+void				_gpio_pwm_start(uint8_t index, gpio_value_t value);
+void				_gpio_pwm_stop(uint8_t index);
 
 
 #ifndef	GPIO_VALUE_MAX

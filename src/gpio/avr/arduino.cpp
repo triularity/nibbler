@@ -99,8 +99,8 @@ _gpio_pin_dump
 	Serial.println(PGM_BYTE(pin->bitmask), HEX);
 	Serial.print("  mux = ");
 	Serial.println(PGM_BYTE(pin->mux));
-	Serial.print("  timer = 0x");
-	Serial.println((uint16_t) PGM_PTR(pin->timer), HEX);
+	Serial.print("  timer = ");
+	Serial.println(PGM_BYTE(pin->timer), HEX);
 }
 
 #endif	/* ARDUINO */

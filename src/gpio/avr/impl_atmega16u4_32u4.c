@@ -16,7 +16,7 @@
 
 uint8_t			_gpio_adc_reference = 0;
 
-static const gpio_timer_t PROGMEM	_gpio_timers[] =
+const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_0A */
 	{
@@ -90,14 +90,6 @@ static const gpio_timer_t PROGMEM	_gpio_timers[] =
 	}
 };
 
-#define	timer_0A	_gpio_timers[0]
-#define	timer_0B	_gpio_timers[1]
-#define	timer_1A	_gpio_timers[2]
-#define	timer_1B	_gpio_timers[3]
-#define	timer_3A	_gpio_timers[4]
-#define	timer_4A	_gpio_timers[5]
-#define	timer_4D	_gpio_timers[6]
-
 
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 {
@@ -138,7 +130,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PIND),
 		(1 << 0), /* DDRD0/PORTD0/PIND0 */
 		GPIO_NO_ADC,
-		&timer_0B
+		1 /* timer_0B */
 	},
 
 	/* #4 -  */
@@ -159,7 +151,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 6), /* DDRC6/PORTC6/PINC6 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_3A
+		4 /* timer_3A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -222,7 +214,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PINB),
 		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		GPIO_NO_ADC,
-		&timer_0A
+		0 /* timer_0A */
 	},
 
 	/* #12 -  */
@@ -243,7 +235,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 7), /* DDRC7/PORTC7/PINC7 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_4A
+		5 /* timer_4A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -367,7 +359,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 7), /* DDRD7/PORTD7/PIND7 */
 		34,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_4D
+		6 /* timer_4D */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -391,7 +383,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 5), /* DDRB5/PORTB5/PINB5 */
 		36,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1A
+		2 /* timer_1A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -405,7 +397,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		37,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1B
+		3 /* timer_1B */
 #else
 		GPIO_NO_TIMER
 #endif

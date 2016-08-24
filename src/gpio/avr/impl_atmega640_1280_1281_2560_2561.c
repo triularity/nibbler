@@ -16,7 +16,7 @@
 
 uint8_t			_gpio_adc_reference = 0;
 
-static const gpio_timer_t PROGMEM	_gpio_timers[] =
+const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_0A */
 	{
@@ -170,22 +170,6 @@ static const gpio_timer_t PROGMEM	_gpio_timers[] =
 	}
 };
 
-#define	timer_0A	_gpio_timers[0]
-#define	timer_0B	_gpio_timers[1]
-#define	timer_1A	_gpio_timers[2]
-#define	timer_1B	_gpio_timers[3]
-#define	timer_2A	_gpio_timers[4]
-#define	timer_2B	_gpio_timers[5]
-#define	timer_3A	_gpio_timers[6]
-#define	timer_3B	_gpio_timers[7]
-#define	timer_3C	_gpio_timers[8]
-#define	timer_4A	_gpio_timers[9]
-#define	timer_4B	_gpio_timers[10]
-#define	timer_4C	_gpio_timers[11]
-#define	timer_5A	_gpio_timers[12]
-#define	timer_5B	_gpio_timers[13]
-#define	timer_5C	_gpio_timers[14]
-
 
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 {
@@ -217,7 +201,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 4), /* DDRE4/PORTE4/PINE4 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_3B
+		7 /* timer_3B */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -231,7 +215,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 5), /* DDRE5/PORTE5/PINE5 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_3C
+		8 /* timer_3C */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -244,7 +228,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PING),
 		(1 << 5), /* DDRG5/PORTG5/PING5 */
 		GPIO_NO_ADC,
-		&timer_0B
+		1 /* timer_0B */
 	},
 
 	/* #5 - D5 (PE3/OC3A) */
@@ -255,7 +239,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 3), /* DDRE3/PORTE3/PINE3 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_3A
+		6 /* timer_3A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -270,7 +254,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 3), /* DDRH3/PORTH3/PINH3 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_4A
+		9 /* timer_4A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -293,7 +277,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 4), /* DDRH4/PORTH4/PINH4 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_4B
+		10 /* timer_4B */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -316,7 +300,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 5), /* DDRH5/PORTH5/PINH5 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_4C
+		11 /* timer_4C */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -338,7 +322,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PINH),
 		(1 << 6), /* DDRH6/PORTH6/PINH6 */
 		GPIO_NO_ADC,
-		&timer_2B
+		5 /* timer_2B */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
 		GPIO_NO_REGISTER,
 		GPIO_NO_REGISTER,
@@ -356,7 +340,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PINB),
 		(1 << 4), /* DDRB4/PORTB4/PINB4 */
 		GPIO_NO_ADC,
-		&timer_2A
+		4 /* timer_2A */
 	},
 
 	/* #11 - D11 (PB5/OC1A/PCINT5) */
@@ -367,7 +351,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 5), /* DDRB5/PORTB5/PINB5 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1A
+		2 /* timer_1A */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -381,7 +365,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_1B
+		3 /* timer_1B */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -394,7 +378,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PINB),
 		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		GPIO_NO_ADC,
-		&timer_0A
+		0 /* timer_0A */
 	},
 
 	/* #14 - D14 (PJ1/PCINT10) */
@@ -760,7 +744,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 5), /* DDRL5/PORTL5/PINL5 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_5C
+		14 /* timer_5C */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -783,7 +767,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 4), /* DDRL4/PORTL4/PINL4 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_5B
+		13 /* timer_5B */
 #else
 		GPIO_NO_TIMER
 #endif
@@ -806,7 +790,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		(1 << 3), /* DDRL3/PORTL3/PINL3 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
-		&timer_5A
+		12 /* timer_5A */
 #else
 		GPIO_NO_TIMER
 #endif

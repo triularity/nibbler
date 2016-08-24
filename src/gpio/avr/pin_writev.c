@@ -20,8 +20,8 @@ gpio_pin_writev
 	gpio_value_t value
 )
 {
-	const gpio_timer_t *	timer;
 	gpio_state_t		state;
+	uint8_t			timer;
 	uint8_t			bitmask;
 
 #ifdef	OPT_SINGLE_PORT
@@ -44,7 +44,7 @@ _nibbler_println(" *** Low");
 _nibbler_println(" *** High");
 		state = GPIO_HIGH;
 	}
-	else if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
+	else if((timer = PGM_BYTE(pin->timer)) != GPIO_NO_TIMER)
 	{
 		_gpio_pwm_start(timer, value);
 

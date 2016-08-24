@@ -18,13 +18,13 @@ gpio_pin_write
 	gpio_state_t state
 )
 {
-	uint8_t			bitmask;
-	const gpio_timer_t *	timer;
+	uint8_t		bitmask;
+	uint8_t		timer;
 
 #ifdef	OPT_SINGLE_PORT
 #define	_PORT	OPT_SINGLE_PORT
 #else
-	gpio_ioptr8_t		port;
+	gpio_ioptr8_t	port;
 #define	_PORT	*port
 #endif
 
@@ -50,7 +50,7 @@ gpio_pin_write
 		/*
 		 * Turn off the PWM timer (in case it is running)
 		 */
-		if((timer = PGM_PTR(pin->timer)) != GPIO_NO_TIMER)
+		if((timer = PGM_BYTE(pin->timer)) != GPIO_NO_TIMER)
 			_gpio_pwm_stop(timer);
 	}
 	else
