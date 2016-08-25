@@ -20,7 +20,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_0A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_8BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -30,7 +30,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_0B */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_8BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -40,7 +40,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_1B */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_8BIT,
 #endif
 		REG_TO_OFFSET(GTCCR),

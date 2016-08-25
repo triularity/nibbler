@@ -48,16 +48,33 @@ typedef	uint8_t			gpio_iooff_t;
 /*
  * Timer type
  */
-#ifndef	WITHOUT_HIRES_TIMERS
 #define	GPIO_TIMER_TYPE_MASK	0x03
+
+#ifdef	OPT_TIMER_8BIT
 #define	GPIO_TIMER_TYPE_8BIT	0x00
-#define	GPIO_TIMER_TYPE_10BIT	0x01
-#define	GPIO_TIMER_TYPE_16BIT	0x02
+#if	!defined(OPT_TIMER_10BIT) && !defined(OPT_TIMER_16BIT)
+#define	OPT_TIMER_SINGLETYPE	GPIO_TIMER_TYPE_8BIT
 #endif
+#endif	/* OPT_TIMER_8BIT */
+
+#ifdef	OPT_TIMER_10BIT
+#define	GPIO_TIMER_TYPE_10BIT	0x01
+#if	!defined(OPT_TIMER_8BIT) && !defined(OPT_TIMER_10BIT)
+#define	OPT_TIMER_SINGLETYPE	GPIO_TIMER_TYPE_10BIT
+#endif
+#endif	/* OPT_TIMER_10BIT */
+
+#ifdef	OPT_TIMER_16BIT
+#define	GPIO_TIMER_TYPE_16BIT	0x02
+#if	!defined(OPT_TIMER_8BIT) && !defined(OPT_TIMER_16BIT)
+#define	OPT_TIMER_SINGLETYPE	GPIO_TIMER_TYPE_16BIT
+#endif
+#endif	/* OPT_TIMER_16BIT */
+
 
 typedef struct _gpio_timer
 {
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 	uint8_t			flags;
 #endif
 	gpio_iooff_t		tccr;		/* &TCCRx */
@@ -81,7 +98,6 @@ typedef struct _gpio_timer
  */
 struct _gpio_port
 {
-	/* Digital */
 #ifndef	OPT_SINGLE_DDR
 	gpio_iooff_t		ddr;		/* &DDRx */
 #endif

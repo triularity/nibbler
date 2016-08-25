@@ -19,12 +19,14 @@ _gpio_pwm_start
 	gpio_value_t value
 )
 {
+#if	defined(OPT_TIMER_8BIT) || defined(OPT_TIMER_10BIT) || defined(OPT_TIMER_16BIT)
 	const gpio_timer_t *	timer;
 	gpio_ioptr8_t		tccr;
 	gpio_ioptr8_t		ocr;
 	uint8_t			tccr_andmask;
 	uint8_t			tccr_enable;
-#ifndef	WITHOUT_HIRES_TIMERS
+
+#if	defined(OPT_TIMER_10BIT) || defined(OPT_TIMER_16BIT)
 	uint16_t		duty;
 #endif
 
@@ -43,15 +45,19 @@ _gpio_pwm_start
 
 	ocr = IOOFF_TO_PTR8(PGM_IOOFF(timer->ocr));
 
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifdef	OPT_TIMER_SINGLETYPE
+	switch(OPT_TIMER_SINGLETYPE)
+#else
 	switch(PGM_BYTE(timer->flags) & GPIO_TIMER_TYPE_MASK)
+#endif
 	{
+#ifdef	OPT_TIMER_8BIT
 		case GPIO_TIMER_TYPE_8BIT:
-#endif	/* !WITHOUT_HIRES_TIMERS */
 			*ocr = (uint8_t) GPIO_VALUE_TO_8BIT(value);
-#ifndef	WITHOUT_HIRES_TIMERS
 			break;
+#endif
 
+#ifdef	OPT_TIMER_10BIT
 		case GPIO_TIMER_TYPE_10BIT:
 			duty = GPIO_VALUE_TO_10BIT(value);
 
@@ -62,7 +68,9 @@ _gpio_pwm_start
 				*(ocr+1) = (uint8_t) (duty & 0xFF);
 			}
 			break;
+#endif	/* OPT_TIMER_10BIT */
 
+#ifdef	OPT_TIMER_16BIT
 		case GPIO_TIMER_TYPE_16BIT:
 			duty = GPIO_VALUE_TO_16BIT(value);
 
@@ -73,6 +81,7 @@ _gpio_pwm_start
 				*(ocr+1) = (uint8_t) (duty & 0xFF);
 			}
 			break;
+#endif	/* OPT_TIMER_16BIT */
 	}
-#endif	/* !WITHOUT_HIRES_TIMERS */
+#endif	/* OPT_TIMER_8BIT || OPT_TIMER_10BIT || OPT_TIMER_16BIT */
 }

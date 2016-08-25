@@ -20,7 +20,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_0A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -30,7 +30,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_0B */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -47,22 +47,14 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	{
 		(1 << 0), /* DDRB0/PORTB0/PINB0 */
 		0,
-#ifndef	WITHOUT_HIRES_TIMERS
 		0 /* timer_0A */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #1 - D1/A1 (PB1/ADC1/OC0B/PCINT1) */
 	{
 		(1 << 1), /* DDRB1/PORTB1/PINB1 */
 		1,
-#ifndef	WITHOUT_HIRES_TIMERS
 		1 /* timer_0B */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #2 - D2/A2 (PB2/ADC2/PCINT2) */

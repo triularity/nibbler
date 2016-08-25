@@ -20,7 +20,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
 	/* timer_0A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_8BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -30,7 +30,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_0B */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_8BIT,
 #endif
 		REG_TO_OFFSET(TCCR0A),
@@ -40,7 +40,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_1A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
@@ -50,7 +50,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_1B */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
@@ -60,7 +60,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_3A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR3A),
@@ -70,7 +70,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_4A */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_10BIT,
 #endif
 		REG_TO_OFFSET(TCCR4A),
@@ -80,7 +80,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 	},
 	/* timer_4D */
 	{
-#ifndef	WITHOUT_HIRES_TIMERS
+#ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_10BIT,
 #endif
 		REG_TO_OFFSET(TCCR4A),
@@ -150,11 +150,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
 		GPIO_NO_ADC,
-#ifndef	WITHOUT_HIRES_TIMERS
 		4 /* timer_3A */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #6 -  */
@@ -234,11 +230,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
 		GPIO_NO_ADC,
-#ifndef	WITHOUT_HIRES_TIMERS
 		5 /* timer_4A */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #14 - D14 (PB3/PCINT3) */
@@ -358,11 +350,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
 		34,
-#ifndef	WITHOUT_HIRES_TIMERS
 		6 /* timer_4D */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #26 - D26/A8 (PB4/ADC11/PCINT4) */
@@ -382,11 +370,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
 		36,
-#ifndef	WITHOUT_HIRES_TIMERS
 		2 /* timer_1A */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #28 - D28/A10 (PB6/ADC13/OC1B/PCINT6) */
@@ -396,11 +380,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
 		37,
-#ifndef	WITHOUT_HIRES_TIMERS
 		3 /* timer_1B */
-#else
-		GPIO_NO_TIMER
-#endif
 	},
 
 	/* #29 - D29/A11 (PD6/ADC9) */
