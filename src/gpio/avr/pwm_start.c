@@ -1,5 +1,5 @@
 /*
- * @(#) pwm.c
+ * @(#) pwm_start.c
  *
  * Copyright (c) 2016, Chad M. Fraleigh.  All rights reserved.
  * http://www.triularity.org/
@@ -75,28 +75,4 @@ _gpio_pwm_start
 			break;
 	}
 #endif	/* !WITHOUT_HIRES_TIMERS */
-}
-
-
-void
-_gpio_pwm_stop
-(
-	uint8_t index
-)
-{
-	const gpio_timer_t *	timer;
-	gpio_ioptr8_t		tccr;
-	uint8_t			tccr_andmask;
-
-
-	timer = &_gpio_timers[index];
-//_gpio_timer_dump(timer);
-
-	tccr = IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr));
-	tccr_andmask = PGM_BYTE(timer->tccr_andmask);
-
-	ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-	{
-		*tccr &= tccr_andmask;
-	}
 }
