@@ -162,5 +162,7 @@ _gpio_adc_select
 #endif	/* ADCSRB */
 
 #endif	/* ADMUXA */
+#else	/* ADSC */
+	(void) mux; /* Quiet unused parameter */
 #endif	/* ADSC */
 }

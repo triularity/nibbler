@@ -19,7 +19,6 @@ gpio_pin_mode
 	uint8_t mode
 )
 {
-	gpio_iooff_t		offset;
 	uint8_t			bitmask;
 	uint8_t			timer;
 

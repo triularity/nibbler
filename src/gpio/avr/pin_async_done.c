@@ -16,6 +16,8 @@ gpio_pin_async_done
 	gpio_pin_t pin
 )
 {
+	(void) pin; /* Quiet unused parameter */
+
 	/*
 	 * Temp implementation until real async
 	 */

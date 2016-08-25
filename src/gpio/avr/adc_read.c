@@ -55,6 +55,7 @@ _gpio_adc_read
 	return value;
 
 #else	/* ADSC */
+	(void) mux; /* Quiet unused parameter */
 
 	/*
 	 * No ADC
