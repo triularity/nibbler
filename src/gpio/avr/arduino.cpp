@@ -20,7 +20,9 @@ _nibbler_print
 	const char *msg
 )
 {
+#ifdef	Serial
 	Serial.print(msg);
+#endif
 }
 
 
@@ -30,7 +32,9 @@ _nibbler_println
 	const char *msg
 )
 {
+#ifdef	Serial
 	Serial.println(msg);
+#endif
 }
 
 
@@ -40,7 +44,9 @@ _nibbler_printhex
 	uint16_t value
 )
 {
+#ifdef	Serial
 	Serial.print(value, HEX);
+#endif
 }
 
 
@@ -50,7 +56,9 @@ _nibbler_printhexln
 	uint16_t value
 )
 {
+#ifdef	Serial
 	Serial.println(value, HEX);
+#endif
 }
 
 
@@ -60,6 +68,7 @@ _gpio_timer_dump
 	const gpio_timer_t *timer
 )
 {
+#ifdef	Serial
 	Serial.println();
 	Serial.print("TIMER[0x");
 	Serial.print((uint16_t) timer, HEX);
@@ -75,6 +84,7 @@ _gpio_timer_dump
 	Serial.println((uint8_t) PGM_BYTE(timer->tccr_enable), HEX);
 	Serial.print("  ocr         = 0x");
 	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(timer->ocr)), HEX);
+#endif	/* Serial */
 }
 
 
@@ -84,23 +94,35 @@ _gpio_pin_dump
 	gpio_pin_t pin
 )
 {
+#ifdef	Serial
 	Serial.println();
 	Serial.print("PIN[0x");
 	Serial.print((uint16_t) pin, HEX);
 	Serial.println("]:");
 
+
+#ifndef OPT_SINGLE_DDR
 	Serial.print("  ddr = 0x");
 	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->ddr)), HEX);
+#endif
+
+#ifndef OPT_SINGLE_PORT
 	Serial.print("  port = 0x");
 	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->port)), HEX);
+#endif
+
+#ifndef OPT_SINGLE_PIN
 	Serial.print("  pin = 0x");
 	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->pin)), HEX);
+#endif
+
 	Serial.print("  bitmask = 0x");
 	Serial.println(PGM_BYTE(pin->bitmask), HEX);
 	Serial.print("  mux = ");
 	Serial.println(PGM_BYTE(pin->mux));
 	Serial.print("  timer = ");
 	Serial.println(PGM_BYTE(pin->timer), HEX);
+#endif	/* Serial */
 }
 
 #endif	/* ARDUINO */
