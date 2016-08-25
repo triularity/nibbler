@@ -45,100 +45,100 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 {
 	/* #0 - D0 (PD0) */
 	{
+		(1 << 0), /* DDRD0/PORTD0/PIND0 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 0), /* DDRD0/PORTD0/PIND0 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #1 - D1 (PD1) */
 	{
+		(1 << 1), /* DDRD1/PORTD1/PIND1 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 1), /* DDRD1/PORTD1/PIND1 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #2 - D2 (PD2) */
 	{
+		(1 << 2), /* DDRD2/PORTD2/PIND2 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 2), /* DDRD2/PORTD2/PIND2 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #3 - D3 (PD3) */
 	{
+		(1 << 3), /* DDRD3/PORTD3/PIND3 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 3), /* DDRD3/PORTD3/PIND3 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #4 - D4 (PD4) */
 	{
+		(1 << 4), /* DDRD4/PORTD4/PIND4 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 4), /* DDRD4/PORTD4/PIND4 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #5 - D5 (PD5) */
 	{
+		(1 << 5), /* DDRD5/PORTD5/PIND5 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 5), /* DDRD5/PORTD5/PIND5 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #6 - D6 (PD6) */
 	{
+		(1 << 6), /* DDRD6/PORTD6/PIND6 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 6), /* DDRD6/PORTD6/PIND6 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #7 - D7 (PD7) */
 	{
+		(1 << 7), /* DDRD7/PORTD7/PIND7 */
 		REG_TO_OFFSET(DDRD),
 		REG_TO_OFFSET(PORTD),
 		REG_TO_OFFSET(PIND),
-		(1 << 7), /* DDRD7/PORTD7/PIND7 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #8 - D8 (PB0) */
 	{
+		(1 << 0), /* DDRB0/PORTB0/PINB0 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 0), /* DDRB0/PORTB0/PINB0 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #9 - D9 (PB1/OC1A) */
 	{
+		(1 << 1), /* DDRB1/PORTB1/PINB1 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 1), /* DDRB1/PORTB1/PINB1 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
 		0 /* timer_1A */
@@ -149,10 +149,10 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #10 - D10 (PB2/OC1B) */
 	{
+		(1 << 2), /* DDRB2/PORTB2/PINB2 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 2), /* DDRB2/PORTB2/PINB2 */
 		GPIO_NO_ADC,
 #ifndef	WITHOUT_HIRES_TIMERS
 		1 /* timer_1B */
@@ -163,120 +163,120 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #11 - D11 (PB3) */
 	{
+		(1 << 3), /* DDRB3/PORTB3/PINB3 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 3), /* DDRB3/PORTB3/PINB3 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #12 - D12 (PB4) */
 	{
+		(1 << 4), /* DDRB4/PORTB4/PINB4 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 4), /* DDRB4/PORTB4/PINB4 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #13 - D13 (PB5) */
 	{
+		(1 << 5), /* DDRB5/PORTB5/PINB5 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 5), /* DDRB5/PORTB5/PINB5 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
 	/* #14 - D14/A0 (PC0/ADC0) */
 	{
+		(1 << 0), /* DDRC0/PORTC0/PINC0 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 0), /* DDRC0/PORTC0/PINC0 */
 		0,
 		GPIO_NO_TIMER
 	},
 
 	/* #15 - D15/A1 (PC1/ADC1) */
 	{
+		(1 << 1), /* DDRC1/PORTC1/PINC1 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 1), /* DDRC1/PORTC1/PINC1 */
 		1,
 		GPIO_NO_TIMER
 	},
 
 	/* #16 - D16/A2 (PC2/ADC2) */
 	{
+		(1 << 2), /* DDRC2/PORTC2/PINC2 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 2), /* DDRC2/PORTC2/PINC2 */
 		2,
 		GPIO_NO_TIMER
 	},
 
 	/* #17 - D17/A3 (PC3/ADC3) */
 	{
+		(1 << 3), /* DDRC3/PORTC3/PINC3 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 3), /* DDRC3/PORTC3/PINC3 */
 		3,
 		GPIO_NO_TIMER
 	},
 
 	/* #18 - D18/A4 (PC4/ADC4) */
 	{
+		(1 << 4), /* DDRC4/PORTC4/PINC4 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 4), /* DDRC4/PORTC4/PINC4 */
 		4,
 		GPIO_NO_TIMER
 	},
 
 	/* #19 - D19/A5 (PC5/ADC5) */
 	{
+		(1 << 5), /* DDRC5/PORTC5/PINC5 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 5), /* DDRC5/PORTC5/PINC5 */
 		5,
 		GPIO_NO_TIMER
 	},
 
 	/* #20 - A6 (ADC6) */
 	{
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+		GPIO_NO_REGISTER,
+		GPIO_NO_REGISTER,
+		GPIO_NO_REGISTER,
 		6,
 		GPIO_NO_TIMER
 	},
 
 	/* #21 - A7 (ADC7) */
 	{
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+		GPIO_NO_REGISTER,
+		GPIO_NO_REGISTER,
+		GPIO_NO_REGISTER,
 		7,
 		GPIO_NO_TIMER
 	},
 
 	/* #22 - D22 (PC6) */
 	{
+		(1 << 6), /* DDRC6/PORTC6/PINC6 */
 		REG_TO_OFFSET(DDRC),
 		REG_TO_OFFSET(PORTC),
 		REG_TO_OFFSET(PINC),
-		(1 << 6), /* DDRC6/PORTC6/PINC6 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
@@ -284,10 +284,10 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #23 - D23 (PB6/TOSC1) */
 	{
 #if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
+		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* WITHOUT_CRYSTAL_OSCILLATOR */
@@ -303,10 +303,10 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #24 - D24 (PB7/TOSC2) */
 	{
 #if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
+		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		REG_TO_OFFSET(DDRB),
 		REG_TO_OFFSET(PORTB),
 		REG_TO_OFFSET(PINB),
-		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* WITHOUT_CRYSTAL_OSCILLATOR */
