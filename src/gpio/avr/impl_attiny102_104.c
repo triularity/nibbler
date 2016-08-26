@@ -162,10 +162,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		4,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */
@@ -203,10 +209,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		2,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */
@@ -228,10 +240,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		3,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */
@@ -253,10 +271,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */
@@ -278,10 +302,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */
@@ -303,10 +333,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATtiny102__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATtiny102__ */

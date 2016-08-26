@@ -299,10 +299,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		9 /* timer_4A */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -324,10 +330,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		10 /* timer_4B */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -349,10 +361,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		11 /* timer_4C */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -374,10 +392,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		5 /* timer_2B */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -463,10 +487,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -488,10 +518,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -513,10 +549,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -538,10 +580,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -947,10 +995,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -972,10 +1026,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -997,10 +1057,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		14 /* timer_5C */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1022,10 +1088,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		13 /* timer_5B */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1047,10 +1119,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		12 /* timer_5A */
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1072,10 +1150,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1097,10 +1181,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1122,10 +1212,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1339,10 +1435,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		32,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1364,10 +1466,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		33,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1389,10 +1497,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		34,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1414,10 +1528,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		35,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1439,10 +1559,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		36,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1464,10 +1590,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		37,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1489,10 +1621,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		38,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1514,10 +1652,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		39,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1635,10 +1779,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1660,10 +1810,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1685,10 +1841,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1710,10 +1872,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1735,10 +1903,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1760,10 +1934,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1785,10 +1965,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1810,10 +1996,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* !__AVR_ATmega1281__ && !__AVR_ATmega2561__ */
@@ -1835,10 +2027,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* WITHOUT_CRYSTAL_OSCILLATOR */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
@@ -1860,10 +2058,16 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #else	/* WITHOUT_CRYSTAL_OSCILLATOR */
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
-		GPIO_NO_REGISTER,
 		0,
+#ifndef	OPT_SINGLE_DDR
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+		GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+		GPIO_NO_REGISTER,
+#endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 #endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
