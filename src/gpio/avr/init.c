@@ -8,6 +8,8 @@
 #include <avr/io.h>
 #include <nibbler/gpio.h>
 
+#include "gpio_private.h"
+
 
 void
 gpio_init
@@ -15,44 +17,37 @@ gpio_init
 	void
 )
 {
-#ifdef	PUD
-	/* Make sure pullups aren't globally disabled */
-
 	/*
-	 * Let's thank Atmel for moving PUD to another register with no
-	 * apparent generic way to know this during compile time.
-	 * Some kind of macro (e.g. PUD_IN_SFIOR) would have been nice!
-	 *
-	 * Anything with SFIOR defined, _except_ ATTiny15 (maybe others?),
-	 * uses it instead of MCUCR.
+	 * Make sure pullups aren't globally disabled
 	 */
-#if	defined(SFIOR) && !defined(__AVR_ATTiny15__)
+#if	defined(OPT_SFIOR_PUD)
 	SFIOR &= ~PUD;
-#else
+#elif	defined(OPT_MCUCR_PUD)
 	MCUCR &= ~PUD;
+#elif	defined(PUD)
+#error	PUD defined with unmapped register
 #endif
-#endif	/* PUD */
 
 	/*
 	 * Enable all per-port pullups
 	 */
 #ifdef	PUEA
-	PUEA = 0xFF
+	PUEA = 0xFF;
 #endif
 
 #ifdef	PUEB
-	PUEB = 0xFF
+	PUEB = 0xFF;
 #endif
 
 #ifdef	PUEC
-	PUEC = 0xFF
+	PUEC = 0xFF;
 #endif
 
 #ifdef	PUED
-	PUED = 0xFF
+	PUED = 0xFF;
 #endif
 
 #ifdef	PUEE
-	PUEE = 0xFF
+#error	PUEE is not supported yet
 #endif
 }
