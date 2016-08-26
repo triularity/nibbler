@@ -34,7 +34,7 @@ gpio_pin_readv
 	else if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
 #ifndef	OPT_SINGLE_PIN
-		reg = IOOFF_TO_PTR8(PGM_IOOFF(pin->pin));
+		reg = IOOFF_TO_PTR8(PGM_IOOFF(pin->p.pin));
 #endif
 
 		return (_PIN & bitmask) ? GPIO_VALUE_MAX : 0;

@@ -44,7 +44,7 @@ gpio_pin_mode
 		return 0;
 
 #ifndef	OPT_SINGLE_DDR
-	ddr = IOOFF_TO_PTR8(PGM_IOOFF(pin->ddr));
+	ddr = IOOFF_TO_PTR8(PGM_IOOFF(pin->p.ddr));
 #endif
 
 	/*
@@ -69,7 +69,7 @@ gpio_pin_mode
 			_gpio_pwm_stop(timer);
 
 #ifndef	OPT_SINGLE_PORT
-		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
+		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->p.port));
 #endif
 
 		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)

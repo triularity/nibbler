@@ -115,18 +115,7 @@ struct _gpio_pin
 {
 	/* Digital */
 	uint8_t			bitmask;	/* Register value bitmask */
-
-#ifndef	OPT_SINGLE_DDR
-	gpio_iooff_t		ddr;		/* &DDRx */
-#endif
-
-#ifndef	OPT_SINGLE_PORT
-	gpio_iooff_t		port;		/* &PORTx */
-#endif
-
-#ifndef	OPT_SINGLE_PIN
-	gpio_iooff_t		pin;		/* &PINx */
-#endif
+	struct _gpio_port	p;		/* Port context */
 
 	/* ADC */
 	uint8_t			mux;		/* ADC channel selection */

@@ -65,7 +65,7 @@ _nibbler_println(" *** Snap");
 	if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
 #ifndef	OPT_SINGLE_PORT
-		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->port));
+		port = IOOFF_TO_PTR8(PGM_IOOFF(pin->p.port));
 #endif
 
 		ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
