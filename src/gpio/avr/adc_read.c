@@ -11,6 +11,12 @@
 
 #include "gpio_private.h"
 
+#ifdef	ADCSRA
+#define	_ADCSR	ADCSRA
+#else
+#define	_ADCSR	ADCSR
+#endif
+
 
 gpio_value_t
 _gpio_adc_read
@@ -35,12 +41,12 @@ _gpio_adc_read
 	/*
 	 * Start conversion
 	 */
-	ADCSRA |= (1<<ADSC);
+	_ADCSR |= (1<<ADSC);
 
 	/*
 	 * Wait for it to complete
 	 */
-	while((ADCSRA & (1<<ADSC)) != 0)
+	while((_ADCSR & (1<<ADSC)) != 0)
 		/* loop */;
 
 	/*
