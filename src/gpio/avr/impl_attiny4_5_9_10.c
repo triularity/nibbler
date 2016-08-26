@@ -28,6 +28,7 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 		(1<<COM0A1),
 		REG_TO_OFFSET(OCR0A)
 	},
+
 	/* timer_0B */
 	{
 #ifndef	OPT_TIMER_SINGLETYPE
@@ -46,6 +47,15 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #0 - D0/A0 (PB0/ADC0/OC0A/PCINT0) */
 	{
 		(1 << 0), /* DDRB0/PORTB0/PINB0 */
+#ifndef	OPT_SINGLE_DDR
+		REG_TO_OFFSET(DDRB),
+#endif
+#ifndef	OPT_SINGLE_PORT
+		REG_TO_OFFSET(PORTB),
+#endif
+#ifndef	OPT_SINGLE_PIN
+		REG_TO_OFFSET(PINB),
+#endif
 		0,
 		0 /* timer_0A */
 	},
@@ -53,6 +63,15 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #1 - D1/A1 (PB1/ADC1/OC0B/PCINT1) */
 	{
 		(1 << 1), /* DDRB1/PORTB1/PINB1 */
+#ifndef	OPT_SINGLE_DDR
+		REG_TO_OFFSET(DDRB),
+#endif
+#ifndef	OPT_SINGLE_PORT
+		REG_TO_OFFSET(PORTB),
+#endif
+#ifndef	OPT_SINGLE_PIN
+		REG_TO_OFFSET(PINB),
+#endif
 		1,
 		1 /* timer_0B */
 	},
@@ -60,6 +79,15 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #2 - D2/A2 (PB2/ADC2/PCINT2) */
 	{
 		(1 << 2), /* DDRB2/PORTB2/PINB2 */
+#ifndef	OPT_SINGLE_DDR
+		REG_TO_OFFSET(DDRB),
+#endif
+#ifndef	OPT_SINGLE_PORT
+		REG_TO_OFFSET(PORTB),
+#endif
+#ifndef	OPT_SINGLE_PIN
+		REG_TO_OFFSET(PINB),
+#endif
 		2,
 		GPIO_NO_TIMER
 	},
@@ -67,6 +95,15 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 	/* #3 - D3/A3 (PB3/ADC3/PCINT3) */
 	{
 		(1 << 3), /* DDRB3/PORTB3/PINB3 */
+#ifndef	OPT_SINGLE_DDR
+		REG_TO_OFFSET(DDRB),
+#endif
+#ifndef	OPT_SINGLE_PORT
+		REG_TO_OFFSET(PORTB),
+#endif
+#ifndef	OPT_SINGLE_PIN
+		REG_TO_OFFSET(PINB),
+#endif
 		3,
 		GPIO_NO_TIMER
 	}
