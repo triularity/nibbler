@@ -100,24 +100,18 @@ _gpio_pin_dump
 	Serial.print((uint16_t) pin, HEX);
 	Serial.println("]:");
 
-
-#ifndef OPT_SINGLE_DDR
-	Serial.print("  ddr = 0x");
-	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->ddr)), HEX);
-#endif
-
-#ifndef OPT_SINGLE_PORT
-	Serial.print("  port = 0x");
-	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->port)), HEX);
-#endif
-
-#ifndef OPT_SINGLE_PIN
-	Serial.print("  pin = 0x");
-	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->pin)), HEX);
-#endif
-
 	Serial.print("  bitmask = 0x");
 	Serial.println(PGM_BYTE(pin->bitmask), HEX);
+
+#ifndef OPT_SINGLE_DIGITAL_PORT
+	Serial.print("  p.ddr = 0x");
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->p.ddr)), HEX);
+	Serial.print("  p.port = 0x");
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->p.port)), HEX);
+	Serial.print("  p.pin = 0x");
+	Serial.println((uint16_t) IOOFF_TO_PTR8(PGM_IOOFF(pin->p.pin)), HEX);
+#endif
+
 	Serial.print("  mux = ");
 	Serial.println(PGM_BYTE(pin->mux));
 	Serial.print("  timer = ");
