@@ -673,6 +673,24 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		},
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
+	},
+
+	/* #32 - A12 (ADC_TMP) */
+	{
+		0,
+		{
+#ifndef	OPT_SINGLE_DDR
+			GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+			GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+			GPIO_NO_REGISTER
+#endif
+		},
+		39,
+		GPIO_NO_TIMER
 	}
 };
 
@@ -690,7 +708,8 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	26,	/* A8 -> D26 */
 	27,	/* A9 -> D27 */
 	28,	/* A10 -> D28 */
-	29	/* A11 -> D29 */
+	29,	/* A11 -> D29 */
+	32	/* A12 */
 };
 
 #endif	/* __AVR_ATmega16U4__ || __AVR_ATmega32U4__ */

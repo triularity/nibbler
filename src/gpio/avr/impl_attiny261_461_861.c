@@ -341,6 +341,24 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		},
 		10,
 		GPIO_NO_TIMER
+	},
+
+	/* #16 - A11 (ADC11) */
+	{
+		0,
+		{
+#ifndef	OPT_SINGLE_DDR
+			GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PORT
+			GPIO_NO_REGISTER,
+#endif
+#ifndef	OPT_SINGLE_PIN
+			GPIO_NO_REGISTER
+#endif
+		},
+		63,
+		GPIO_NO_TIMER
 	}
 };
 
@@ -357,7 +375,8 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	12,	/* A7 -> D12 */
 	13,	/* A8 -> D13 */
 	14,	/* A9 -> D14 */
-	15	/* A10 -> D15 */
+	15,	/* A10 -> D15 */
+	16	/* A11 */
 };
 
 #endif	/* __AVR_ATtiny261__ || __AVR_ATtiny461__ || __AVR_ATtiny861__ */
