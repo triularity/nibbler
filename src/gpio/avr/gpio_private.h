@@ -98,15 +98,9 @@ typedef struct _gpio_timer
  */
 struct _gpio_port
 {
-#ifndef	OPT_SINGLE_DDR
+#ifndef	OPT_SINGLE_DIGITAL_PORT
 	gpio_iooff_t		ddr;		/* &DDRx */
-#endif
-
-#ifndef	OPT_SINGLE_PORT
 	gpio_iooff_t		port;		/* &PORTx */
-#endif
-
-#ifndef	OPT_SINGLE_PIN
 	gpio_iooff_t		pin;		/* &PINx */
 #endif
 };
@@ -115,7 +109,9 @@ struct _gpio_pin
 {
 	/* Digital */
 	uint8_t			bitmask;	/* Register value bitmask */
+#ifndef	OPT_SINGLE_DIGITAL_PORT
 	struct _gpio_port	p;		/* Port context */
+#endif
 
 	/* ADC */
 	uint8_t			mux;		/* ADC channel selection */
