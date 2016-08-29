@@ -7,6 +7,7 @@
  *   atmega16_16a.avrspec
  *   atmega16u4_32u4.avrspec
  *   atmega324a.avrspec
+ *   atmega32_32a.avrspec
  *   atmega48_88_168.avrspec
  *   atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
  *   atmega640_1280_1281_2560_2561.avrspec
@@ -56,6 +57,15 @@
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
+#endif
+
+#if	defined(__AVR_ATmega32__) || defined(__AVR_ATmega32A__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_SFIOR_PUD
 #endif
 
 #if	defined(__AVR_ATmega48__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega168__)
