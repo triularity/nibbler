@@ -1,11 +1,11 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega8.avrspec
+ * Make changes to: atmega8_8a.avrspec
  *
- * Pin configuration for atmega8.
+ * Pin configuration for atmega8/atmega8a.
  */
-#if	defined(__AVR_ATmega8__)
+#if	defined(__AVR_ATmega8__) || defined(__AVR_ATmega8A__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -38,6 +38,17 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 		(uint8_t) ~((1<<COM1B1)|(1<<COM1B0)),
 		(1<<COM1B1),
 		REG_TO_OFFSET(OCR1B)
+	},
+
+	/* timer_2 */
+	{
+#ifndef	OPT_TIMER_SINGLETYPE
+		GPIO_TIMER_TYPE_8BIT,
+#endif
+		REG_TO_OFFSET(TCCR2),
+		(uint8_t) ~((1<<COM21)|(1<<COM20)),
+		(1<<COM21),
+		REG_TO_OFFSET(OCR2)
 	}
 };
 
@@ -198,7 +209,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		1 /* timer_1B */
 	},
 
-	/* #11 - D11 (PB3) */
+	/* #11 - D11 (PB3/OC2) */
 	{
 		(1 << 3), /* DDRB3/PORTB3/PINB3 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -209,7 +220,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		},
 #endif
 		GPIO_NO_ADC,
-		GPIO_NO_TIMER
+		2 /* timer_2 */
 	},
 
 	/* #12 - D12 (PB4) */
@@ -434,4 +445,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	21	/* A7 */
 };
 
-#endif	/* __AVR_ATmega8__ */
+#endif	/* __AVR_ATmega8__ || __AVR_ATmega8A__ */

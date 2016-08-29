@@ -1,11 +1,11 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny26_26l.avrspec
+ * Make changes to: attiny26.avrspec
  *
- * Pin configuration for attiny26/attiny26l.
+ * Pin configuration for attiny26.
  */
-#if	defined(__AVR_ATtiny26__) || defined(__AVR_ATtiny26L__)
+#if	defined(__AVR_ATtiny26__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -285,4 +285,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	15	/* A10 -> D15 */
 };
 
-#endif	/* __AVR_ATtiny26__ || __AVR_ATtiny26L__ */
+#endif	/* __AVR_ATtiny26__ */

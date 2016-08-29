@@ -4,12 +4,13 @@
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
  * Source Files:
+ *   atmega16_16a.avrspec
  *   atmega16u4_32u4.avrspec
  *   atmega324a.avrspec
  *   atmega48_88_168.avrspec
  *   atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
  *   atmega640_1280_1281_2560_2561.avrspec
- *   atmega8.avrspec
+ *   atmega8_8a.avrspec
  *   attiny13_13a.avrspec
  *   attiny1634.avrspec
  *   attiny2313.avrspec
@@ -17,15 +18,25 @@
  *   attiny24_44_84.avrspec
  *   attiny24a_44a_84a.avrspec
  *   attiny25_45_85.avrspec
+ *   attiny26.avrspec
  *   attiny261_461_861.avrspec
  *   attiny261a_461a_861a.avrspec
- *   attiny26_26l.avrspec
+ *   attiny43u.avrspec
  *   attiny48_88.avrspec
  *   attiny87_167.avrspec
  */
 
 #ifndef	__avr_options_h
 #define	__avr_options_h
+
+#if	defined(__AVR_ATmega16__) || defined(__AVR_ATmega16A__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_SFIOR_PUD
+#endif
 
 #if	defined(__AVR_ATmega16U4__) || defined(__AVR_ATmega32U4__)
 #define	GPIO_PIN_COUNT 33
@@ -76,9 +87,10 @@
 #define	OPT_MCUCR_PUD
 #endif
 
-#if	defined(__AVR_ATmega8__)
+#if	defined(__AVR_ATmega8__) || defined(__AVR_ATmega8A__)
 #define	GPIO_PIN_COUNT 25
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
@@ -153,6 +165,14 @@
 #define	OPT_MCUCR_PUD
 #endif
 
+#if	defined(__AVR_ATtiny26__)
+#define	GPIO_PIN_COUNT 16
+#define	GPIO_ANALOG_PIN_COUNT 11
+#define	OPT_TIMER_8BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_MCUCR_PUD
+#endif
+
 #if	defined(__AVR_ATtiny261__) || defined(__AVR_ATtiny461__) || defined(__AVR_ATtiny861__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
@@ -173,12 +193,12 @@
 #define	OPT_MCUCR_PUD
 #endif
 
-#if	defined(__AVR_ATtiny26__) || defined(__AVR_ATtiny26L__)
-#define	GPIO_PIN_COUNT 16
-#define	GPIO_ANALOG_PIN_COUNT 11
+#if	defined(__AVR_ATtiny43U__)
+#define	GPIO_PIN_COUNT 17
+#define	GPIO_ANALOG_PIN_COUNT 5
 #define	OPT_TIMER_8BIT
-#define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
+#define	OPT_ADCSRB_ADLAR
 #endif
 
 #if	defined(__AVR_ATtiny48__) || defined(__AVR_ATtiny88__)
