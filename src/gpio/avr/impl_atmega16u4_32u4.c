@@ -155,7 +155,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		1 /* timer_0B */
 	},
 
-	/* #4 -  */
+	/* #4 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -183,7 +183,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		4 /* timer_3A */
 	},
 
-	/* #6 -  */
+	/* #6 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -211,7 +211,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #8 -  */
+	/* #8 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -225,7 +225,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #9 -  */
+	/* #9 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -239,7 +239,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #10 -  */
+	/* #10 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -267,7 +267,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		0 /* timer_0A */
 	},
 
-	/* #12 -  */
+	/* #12 */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
