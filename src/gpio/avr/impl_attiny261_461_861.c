@@ -24,8 +24,8 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 		GPIO_TIMER_TYPE_10BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
-		(uint8_t) ~((1<<COM1A1)|(1<<COM1A0)),
-		(1<<COM1A1),
+		(uint8_t) ~((1<<PWM1A)|(1<<COM1A1)|(1<<COM1A0)),
+		(1<<PWM1A)|(1<<COM1A1),
 		REG_TO_OFFSET(OCR1A)
 	},
 
@@ -35,8 +35,8 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 		GPIO_TIMER_TYPE_10BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
-		(uint8_t) ~((1<<COM1B1)|(1<<COM1B0)),
-		(1<<COM1B1),
+		(uint8_t) ~((1<<PWM1B)|(1<<COM1B1)|(1<<COM1B0)),
+		(1<<PWM1B)|(1<<COM1B1),
 		REG_TO_OFFSET(OCR1B)
 	},
 
@@ -45,9 +45,9 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 #ifndef	OPT_TIMER_SINGLETYPE
 		GPIO_TIMER_TYPE_10BIT,
 #endif
-		REG_TO_OFFSET(TCCR1A),
-		(uint8_t) ~((1<<COM1D1)|(1<<COM1D0)),
-		(1<<COM1D1),
+		REG_TO_OFFSET(TCCR1C),
+		(uint8_t) ~((1<<PWM1D)|(1<<COM1D1)|(1<<COM1D0)),
+		(1<<PWM1D)|(1<<COM1D1),
 		REG_TO_OFFSET(OCR1D)
 	}
 };
