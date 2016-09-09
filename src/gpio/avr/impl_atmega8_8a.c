@@ -380,7 +380,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 
 	/* #23 - D23 (PB6/TOSC1) */
 	{
-#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_EXTERNAL_OSCILLATOR)
 		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
@@ -391,7 +391,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_EXTERNAL_OSCILLATOR */
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
@@ -402,12 +402,12 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_EXTERNAL_OSCILLATOR */
 	},
 
 	/* #24 - D24 (PB7/TOSC2) */
 	{
-#if	defined(WITHOUT_CRYSTAL_OSCILLATOR)
+#if	defined(WITHOUT_EXTERNAL_OSCILLATOR)
 		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
@@ -418,7 +418,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#else	/* WITHOUT_CRYSTAL_OSCILLATOR */
+#else	/* WITHOUT_EXTERNAL_OSCILLATOR */
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
@@ -429,7 +429,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
-#endif	/* WITHOUT_CRYSTAL_OSCILLATOR */
+#endif	/* WITHOUT_EXTERNAL_OSCILLATOR */
 	}
 };
 
