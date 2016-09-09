@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny261_461_861.avrspec
+ * Source Files:
+ *   attiny261_461_861.avrspec
  *
  * Pin configuration for attiny261/attiny461/attiny861.
  */

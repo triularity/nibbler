@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega48_88_168.avrspec
+ * Source Files:
+ *   atmega48_88_168.avrspec
  *
  * Pin configuration for atmega48/atmega88/atmega168.
  */

@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega640_1280_1281_2560_2561.avrspec
+ * Source Files:
+ *   atmega640_1280_1281_2560_2561.avrspec
  *
  * Pin configuration for atmega640/atmega1280/atmega1281/atmega2560/atmega2561.
  */

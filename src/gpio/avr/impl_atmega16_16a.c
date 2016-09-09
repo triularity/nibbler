@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega16_16a.avrspec
+ * Source Files:
+ *   atmega16_16a.avrspec
  *
  * Pin configuration for atmega16/atmega16a.
  */

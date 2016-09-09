@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
+ * Source Files:
+ *   atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
  *
  * Pin configuration for atmega48a/atmega48pa/atmega88a/atmega88pa/atmega168a/atmega168pa/atmega328/atmega328p.
  */

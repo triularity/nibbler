@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny24_44_84.avrspec
+ * Source Files:
+ *   attiny24_44_84.avrspec
  *
  * Pin configuration for attiny24/attiny44/attiny84.
  */

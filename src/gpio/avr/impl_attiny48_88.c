@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny48_88.avrspec
+ * Source Files:
+ *   attiny48_88.avrspec
  *
  * Pin configuration for attiny48/attiny88.
  */

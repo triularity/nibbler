@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega324a.avrspec
+ * Source Files:
+ *   atmega324a.avrspec
  *
  * Pin configuration for atmega324a.
  */

@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny87_167.avrspec
+ * Source Files:
+ *   attiny87_167.avrspec
  *
  * Pin configuration for attiny87/attiny167.
  */

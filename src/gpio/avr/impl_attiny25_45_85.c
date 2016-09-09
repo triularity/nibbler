@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny25_45_85.avrspec
+ * Source Files:
+ *   attiny25_45_85.avrspec
  *
  * Pin configuration for attiny25/attiny45/attiny85.
  */

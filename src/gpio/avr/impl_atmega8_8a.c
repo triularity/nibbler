@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega8_8a.avrspec
+ * Source Files:
+ *   atmega8_8a.avrspec
  *
  * Pin configuration for atmega8/atmega8a.
  */

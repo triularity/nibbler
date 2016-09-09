@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: attiny13_13a.avrspec
+ * Source Files:
+ *   attiny13_13a.avrspec
  *
  * Pin configuration for attiny13/attiny13a.
  */

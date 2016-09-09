@@ -1,7 +1,8 @@
 /*
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
- * Make changes to: atmega32_32a.avrspec
+ * Source Files:
+ *   atmega32_32a.avrspec
  *
  * Pin configuration for atmega32/atmega32a.
  */
