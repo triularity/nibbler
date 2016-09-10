@@ -21,9 +21,9 @@ gpio_init
 	 * Make sure pullups aren't globally disabled
 	 */
 #if	defined(OPT_SFIOR_PUD)
-	SFIOR &= ~PUD;
+	SFIOR &= ~(1<<PUD);
 #elif	defined(OPT_MCUCR_PUD)
-	MCUCR &= ~PUD;
+	MCUCR &= ~(1<<PUD);
 #elif	defined(PUD)
 #error	PUD defined with unmapped register
 #endif
