@@ -33,6 +33,7 @@
 #if	defined(__AVR_ATmega8__)
 #define	GPIO_PIN_COUNT 25
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -43,6 +44,7 @@
 #if	defined(__AVR_ATmega8A__)
 #define	GPIO_PIN_COUNT 25
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -53,6 +55,7 @@
 #if	defined(__AVR_ATmega16__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -63,6 +66,7 @@
 #if	defined(__AVR_ATmega16A__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -73,6 +77,7 @@
 #if	defined(__AVR_ATmega16U4__)
 #define	GPIO_PIN_COUNT 33
 #define	GPIO_ANALOG_PIN_COUNT 13
+#define	GPIO_PORT_COUNT 5
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_10BIT
 #define	OPT_TIMER_16BIT
@@ -85,6 +90,7 @@
 #if	defined(__AVR_ATmega32__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -95,6 +101,7 @@
 #if	defined(__AVR_ATmega32A__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -105,6 +112,7 @@
 #if	defined(__AVR_ATmega32U4__)
 #define	GPIO_PIN_COUNT 33
 #define	GPIO_ANALOG_PIN_COUNT 13
+#define	GPIO_PORT_COUNT 5
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_10BIT
 #define	OPT_TIMER_16BIT
@@ -117,6 +125,7 @@
 #if	defined(__AVR_ATmega48__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -127,6 +136,7 @@
 #if	defined(__AVR_ATmega48A__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -137,6 +147,7 @@
 #if	defined(__AVR_ATmega48PA__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -147,6 +158,7 @@
 #if	defined(__AVR_ATmega88__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -157,6 +169,7 @@
 #if	defined(__AVR_ATmega88A__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -167,6 +180,7 @@
 #if	defined(__AVR_ATmega88PA__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -177,6 +191,7 @@
 #if	defined(__AVR_ATmega168__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -187,6 +202,7 @@
 #if	defined(__AVR_ATmega168A__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -197,6 +213,7 @@
 #if	defined(__AVR_ATmega168PA__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -207,6 +224,7 @@
 #if	defined(__AVR_ATmega324A__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -217,6 +235,7 @@
 #if	defined(__AVR_ATmega328__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -227,6 +246,7 @@
 #if	defined(__AVR_ATmega328P__)
 #define	GPIO_PIN_COUNT 26
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
@@ -237,6 +257,7 @@
 #if	defined(__AVR_ATmega640__)
 #define	GPIO_PIN_COUNT 86
 #define	GPIO_ANALOG_PIN_COUNT 16
+#define	GPIO_PORT_COUNT 11
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -249,6 +270,7 @@
 #if	defined(__AVR_ATmega1280__)
 #define	GPIO_PIN_COUNT 86
 #define	GPIO_ANALOG_PIN_COUNT 16
+#define	GPIO_PORT_COUNT 11
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -261,6 +283,7 @@
 #if	defined(__AVR_ATmega1281__)
 #define	GPIO_PIN_COUNT 86
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 7
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -273,6 +296,7 @@
 #if	defined(__AVR_ATmega2560__)
 #define	GPIO_PIN_COUNT 86
 #define	GPIO_ANALOG_PIN_COUNT 16
+#define	GPIO_PORT_COUNT 11
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -285,6 +309,7 @@
 #if	defined(__AVR_ATmega2561__)
 #define	GPIO_PIN_COUNT 86
 #define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 7
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -297,6 +322,7 @@
 #if	defined(__AVR_ATtiny13__)
 #define	GPIO_PIN_COUNT 6
 #define	GPIO_ANALOG_PIN_COUNT 4
+#define	GPIO_PORT_COUNT 1
 #define	OPT_SINGLE_DIGITAL_PORT
 #define	OPT_SINGLE_DDR DDRB
 #define	OPT_SINGLE_PIN PINB
@@ -310,6 +336,7 @@
 #if	defined(__AVR_ATtiny13A__)
 #define	GPIO_PIN_COUNT 6
 #define	GPIO_ANALOG_PIN_COUNT 4
+#define	GPIO_PORT_COUNT 1
 #define	OPT_SINGLE_DIGITAL_PORT
 #define	OPT_SINGLE_DDR DDRB
 #define	OPT_SINGLE_PIN PINB
@@ -323,6 +350,7 @@
 #if	defined(__AVR_ATtiny24__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -334,6 +362,7 @@
 #if	defined(__AVR_ATtiny24A__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -345,6 +374,7 @@
 #if	defined(__AVR_ATtiny25__)
 #define	GPIO_PIN_COUNT 7
 #define	GPIO_ANALOG_PIN_COUNT 5
+#define	GPIO_PORT_COUNT 1
 #define	OPT_SINGLE_DIGITAL_PORT
 #define	OPT_SINGLE_DDR DDRB
 #define	OPT_SINGLE_PIN PINB
@@ -359,6 +389,7 @@
 #if	defined(__AVR_ATtiny26__)
 #define	GPIO_PIN_COUNT 16
 #define	GPIO_ANALOG_PIN_COUNT 11
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
@@ -368,6 +399,7 @@
 #if	defined(__AVR_ATtiny43U__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 5
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_MCUCR_PUD
 #define	OPT_ADCSRB_ADLAR
@@ -377,6 +409,7 @@
 #if	defined(__AVR_ATtiny44__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -388,6 +421,7 @@
 #if	defined(__AVR_ATtiny44A__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -399,6 +433,7 @@
 #if	defined(__AVR_ATtiny45__)
 #define	GPIO_PIN_COUNT 7
 #define	GPIO_ANALOG_PIN_COUNT 5
+#define	GPIO_PORT_COUNT 1
 #define	OPT_SINGLE_DIGITAL_PORT
 #define	OPT_SINGLE_DDR DDRB
 #define	OPT_SINGLE_PIN PINB
@@ -413,6 +448,7 @@
 #if	defined(__AVR_ATtiny48__)
 #define	GPIO_PIN_COUNT 27
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
@@ -422,6 +458,7 @@
 #if	defined(__AVR_ATtiny84__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -433,6 +470,7 @@
 #if	defined(__AVR_ATtiny84A__)
 #define	GPIO_PIN_COUNT 13
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_MUX5
@@ -444,6 +482,7 @@
 #if	defined(__AVR_ATtiny85__)
 #define	GPIO_PIN_COUNT 7
 #define	GPIO_ANALOG_PIN_COUNT 5
+#define	GPIO_PORT_COUNT 1
 #define	OPT_SINGLE_DIGITAL_PORT
 #define	OPT_SINGLE_DDR DDRB
 #define	OPT_SINGLE_PIN PINB
@@ -458,6 +497,7 @@
 #if	defined(__AVR_ATtiny87__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
@@ -467,6 +507,7 @@
 #if	defined(__AVR_ATtiny88__)
 #define	GPIO_PIN_COUNT 27
 #define	GPIO_ANALOG_PIN_COUNT 9
+#define	GPIO_PORT_COUNT 4
 #define	OPT_TIMER_16BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
@@ -476,6 +517,7 @@
 #if	defined(__AVR_ATtiny167__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_8BIT
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
@@ -485,6 +527,7 @@
 #if	defined(__AVR_ATtiny261__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -496,6 +539,7 @@
 #if	defined(__AVR_ATtiny261A__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -507,6 +551,7 @@
 #if	defined(__AVR_ATtiny461__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -518,6 +563,7 @@
 #if	defined(__AVR_ATtiny461A__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -529,6 +575,7 @@
 #if	defined(__AVR_ATtiny861__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -540,6 +587,7 @@
 #if	defined(__AVR_ATtiny861A__)
 #define	GPIO_PIN_COUNT 17
 #define	GPIO_ANALOG_PIN_COUNT 12
+#define	GPIO_PORT_COUNT 2
 #define	OPT_TIMER_10BIT
 #define	OPT_ADCSRB_REFS2
 #define	OPT_ADCSRB_MUX5
@@ -551,6 +599,7 @@
 #if	defined(__AVR_ATtiny1634__)
 #define	GPIO_PIN_COUNT 19
 #define	GPIO_ANALOG_PIN_COUNT 13
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_ADCSRB_ADLAR
@@ -560,6 +609,7 @@
 #if	defined(__AVR_ATtiny2313__)
 #define	GPIO_PIN_COUNT 18
 #define	GPIO_ANALOG_PIN_COUNT 0
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_MCUCR_PUD
@@ -569,6 +619,7 @@
 #if	defined(__AVR_ATtiny2313A__)
 #define	GPIO_PIN_COUNT 18
 #define	GPIO_ANALOG_PIN_COUNT 0
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_MCUCR_PUD
@@ -578,6 +629,7 @@
 #if	defined(__AVR_ATtiny4313__)
 #define	GPIO_PIN_COUNT 18
 #define	GPIO_ANALOG_PIN_COUNT 0
+#define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_MCUCR_PUD

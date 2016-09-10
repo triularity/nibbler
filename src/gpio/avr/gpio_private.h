@@ -128,6 +128,7 @@ struct _gpio_pin
 
 extern const struct _gpio_pin PROGMEM	_gpio_pins[];
 extern const uint8_t PROGMEM		_gpio_analog_to_digital_pins[];
+extern const struct _gpio_port PROGMEM	_gpio_ports[];
 extern const struct _gpio_timer PROGMEM	_gpio_timers[];
 
 

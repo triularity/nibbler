@@ -65,6 +65,26 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 };
 
 
+const struct _gpio_port PROGMEM	_gpio_ports[GPIO_PORT_COUNT] =
+{
+	{
+		REG_TO_OFFSET(DDRA),
+		REG_TO_OFFSET(PORTA),
+		REG_TO_OFFSET(PINA)
+	},
+	{
+		REG_TO_OFFSET(DDRB),
+		REG_TO_OFFSET(PORTB),
+		REG_TO_OFFSET(PINB)
+	},
+	{
+		REG_TO_OFFSET(DDRC),
+		REG_TO_OFFSET(PORTC),
+		REG_TO_OFFSET(PINC)
+	}
+};
+
+
 const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 {
 	/* #0 - D0 (PA0/PCINT0) */
