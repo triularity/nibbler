@@ -88,7 +88,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		2,
-		0 /* timer_0A */
+		&_gpio_timers[0] - &_gpio_timers[0] /* timer_0A */
 	},
 
 	/* #3 - D3/A3 (PA3/ADC3/PCINT3) */

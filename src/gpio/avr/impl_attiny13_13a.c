@@ -68,7 +68,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		0 /* timer_0A */
+		&_gpio_timers[0] - &_gpio_timers[0] /* timer_0A */
 	},
 
 	/* #1 - D1 (PB1/OC0B/PCINT1) */
@@ -82,7 +82,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		1 /* timer_0B */
+		&_gpio_timers[1] - &_gpio_timers[0] /* timer_0B */
 	},
 
 	/* #2 - D2/A1 (PB2/ADC1/PCINT2) */

@@ -136,8 +136,8 @@ extern uint8_t			_gpio_adc_reference;
 gpio_value_t			_gpio_adc_read(uint8_t mux);
 void				_gpio_adc_select(uint8_t mux);
 
-void				_gpio_pwm_start(uint8_t index, gpio_value_t value);
-void				_gpio_pwm_stop(uint8_t index);
+void				_gpio_pwm_start(uint8_t offset, gpio_value_t value);
+void				_gpio_pwm_stop(uint8_t offset);
 
 
 #ifndef	GPIO_VALUE_MAX

@@ -168,7 +168,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		2,
-		1 /* timer_0B */
+		&_gpio_timers[1] - &_gpio_timers[0] /* timer_0B */
 	},
 
 	/* #6 - D6/A3 (PA6/ADC3/OC1B/PCINT6) */
@@ -182,7 +182,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		3,
-		3 /* timer_1B */
+		&_gpio_timers[3] - &_gpio_timers[0] /* timer_1B */
 	},
 
 	/* #7 - D7/A4 (PA7/ADC4/PCINT7) */
@@ -252,7 +252,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		8,
-		2 /* timer_1A */
+		&_gpio_timers[2] - &_gpio_timers[0] /* timer_1A */
 	},
 
 	/* #12 - D12/A9 (PC0/ADC9/OC0A/PCINT12) */
@@ -266,7 +266,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		9,
-		0 /* timer_0A */
+		&_gpio_timers[0] - &_gpio_timers[0] /* timer_0A */
 	},
 
 	/* #13 - D13/A10 (PC1/ADC10/PCINT13) */

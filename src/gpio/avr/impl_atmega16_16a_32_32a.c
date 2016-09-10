@@ -258,7 +258,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		0 /* timer_0 */
+		&_gpio_timers[0] - &_gpio_timers[0] /* timer_0 */
 	},
 
 	/* #12 - D12 (PB4) */
@@ -468,7 +468,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		2 /* timer_1B */
+		&_gpio_timers[2] - &_gpio_timers[0] /* timer_1B */
 	},
 
 	/* #27 - D27 (PD5/OC1A) */
@@ -482,7 +482,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		1 /* timer_1A */
+		&_gpio_timers[1] - &_gpio_timers[0] /* timer_1A */
 	},
 
 	/* #28 - D28 (PD6) */
@@ -510,7 +510,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		3 /* timer_2 */
+		&_gpio_timers[3] - &_gpio_timers[0] /* timer_2 */
 	},
 
 	/* #30 - D30 (PC6/TOSC1) */

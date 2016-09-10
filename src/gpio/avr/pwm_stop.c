@@ -15,7 +15,7 @@
 void
 _gpio_pwm_stop
 (
-	uint8_t index
+	uint8_t offset
 )
 {
 	const gpio_timer_t *	timer;
@@ -23,7 +23,7 @@ _gpio_pwm_stop
 	uint8_t			tccr_andmask;
 
 
-	timer = &_gpio_timers[index];
+	timer = (const gpio_timer_t *) (((char *) _gpio_timers) + offset);
 //_gpio_timer_dump(timer);
 
 	tccr = IOOFF_TO_PTR8(PGM_IOOFF(timer->tccr));
