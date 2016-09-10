@@ -2,11 +2,12 @@
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
  * Source Files:
- *   attiny261a_461a_861a.avrspec
+ *   attiny24_44_84.avrspec
+ *   attiny24a_44a_84a.avrspec
  *
- * Pin configuration for attiny261a/attiny461a/attiny861a.
+ * Pin configuration for attiny24/attiny24a/attiny44/attiny44a/attiny84/attiny84a.
  */
-#if	defined(__AVR_ATtiny261A__) || defined(__AVR_ATtiny461A__) || defined(__AVR_ATtiny861A__)
+#if	defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny24A__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny44A__) || defined(__AVR_ATtiny84__) || defined(__AVR_ATtiny84A__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -19,37 +20,48 @@ uint8_t			_gpio_adc_reference = 0;
 
 const gpio_timer_t PROGMEM	_gpio_timers[] =
 {
+	/* timer_0A */
+	{
+#ifndef	OPT_TIMER_SINGLETYPE
+		GPIO_TIMER_TYPE_8BIT,
+#endif
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0A1)|(1<<COM0A0)),
+		(1<<COM0A1),
+		REG_TO_OFFSET(OCR0A)
+	},
+
+	/* timer_0B */
+	{
+#ifndef	OPT_TIMER_SINGLETYPE
+		GPIO_TIMER_TYPE_8BIT,
+#endif
+		REG_TO_OFFSET(TCCR0A),
+		(uint8_t) ~((1<<COM0B1)|(1<<COM0B0)),
+		(1<<COM0B1),
+		REG_TO_OFFSET(OCR0B)
+	},
+
 	/* timer_1A */
 	{
 #ifndef	OPT_TIMER_SINGLETYPE
-		GPIO_TIMER_TYPE_10BIT,
+		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
-		(uint8_t) ~((1<<PWM1A)|(1<<COM1A1)|(1<<COM1A0)),
-		(1<<PWM1A)|(1<<COM1A1),
+		(uint8_t) ~((1<<COM1A1)|(1<<COM1A0)),
+		(1<<COM1A1),
 		REG_TO_OFFSET(OCR1A)
 	},
 
 	/* timer_1B */
 	{
 #ifndef	OPT_TIMER_SINGLETYPE
-		GPIO_TIMER_TYPE_10BIT,
+		GPIO_TIMER_TYPE_16BIT,
 #endif
 		REG_TO_OFFSET(TCCR1A),
-		(uint8_t) ~((1<<PWM1B)|(1<<COM1B1)|(1<<COM1B0)),
-		(1<<PWM1B)|(1<<COM1B1),
+		(uint8_t) ~((1<<COM1B1)|(1<<COM1B0)),
+		(1<<COM1B1),
 		REG_TO_OFFSET(OCR1B)
-	},
-
-	/* timer_1D */
-	{
-#ifndef	OPT_TIMER_SINGLETYPE
-		GPIO_TIMER_TYPE_10BIT,
-#endif
-		REG_TO_OFFSET(TCCR1C),
-		(uint8_t) ~((1<<PWM1D)|(1<<COM1D1)|(1<<COM1D0)),
-		(1<<PWM1D)|(1<<COM1D1),
-		REG_TO_OFFSET(OCR1D)
 	}
 };
 
@@ -98,23 +110,9 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #3 - D3 (PA3/PCINT3) */
+	/* #3 - D3/A3 (PA3/ADC3/PCINT3) */
 	{
 		(1 << 3), /* DDRA3/PORTA3/PINA3 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRA),
-			REG_TO_OFFSET(PORTA),
-			REG_TO_OFFSET(PINA)
-		},
-#endif
-		GPIO_NO_ADC,
-		GPIO_NO_TIMER
-	},
-
-	/* #4 - D4/A3 (PA4/ADC3/PCINT4) */
-	{
-		(1 << 4), /* DDRA4/PORTA4/PINA4 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
 			REG_TO_OFFSET(DDRA),
@@ -126,9 +124,9 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #5 - D5/A4 (PA5/ADC4/PCINT5) */
+	/* #4 - D4/A4 (PA4/ADC4/PCINT4) */
 	{
-		(1 << 5), /* DDRA5/PORTA5/PINA5 */
+		(1 << 4), /* DDRA4/PORTA4/PINA4 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
 		{
 			REG_TO_OFFSET(DDRA),
@@ -140,7 +138,21 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #6 - D6/A5 (PA6/ADC5/PCINT6) */
+	/* #5 - D5/A5 (PA5/ADC5/OC1B/PCINT5) */
+	{
+		(1 << 5), /* DDRA5/PORTA5/PINA5 */
+#ifndef	OPT_SINGLE_DIGITAL_PORT
+		{
+			REG_TO_OFFSET(DDRA),
+			REG_TO_OFFSET(PORTA),
+			REG_TO_OFFSET(PINA)
+		},
+#endif
+		5,
+		3 /* timer_1B */
+	},
+
+	/* #6 - D6/A6 (PA6/ADC6/OC1A/PCINT6) */
 	{
 		(1 << 6), /* DDRA6/PORTA6/PINA6 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -150,11 +162,11 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 			REG_TO_OFFSET(PINA)
 		},
 #endif
-		5,
-		GPIO_NO_TIMER
+		6,
+		2 /* timer_1A */
 	},
 
-	/* #7 - D7/A6 (PA7/ADC6/PCINT7) */
+	/* #7 - D7/A7 (PA7/ADC7/OC0B/PCINT7) */
 	{
 		(1 << 7), /* DDRA7/PORTA7/PINA7 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -164,11 +176,39 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 			REG_TO_OFFSET(PINA)
 		},
 #endif
-		6,
+		7,
+		1 /* timer_0B */
+	},
+
+	/* #8 - D8 (PB2/OC0A/PCINT10) */
+	{
+		(1 << 2), /* DDRB2/PORTB2/PINB2 */
+#ifndef	OPT_SINGLE_DIGITAL_PORT
+		{
+			REG_TO_OFFSET(DDRB),
+			REG_TO_OFFSET(PORTB),
+			REG_TO_OFFSET(PINB)
+		},
+#endif
+		GPIO_NO_ADC,
+		0 /* timer_0A */
+	},
+
+	/* #9 - D9 (PB1/PCINT9) */
+	{
+		(1 << 1), /* DDRB1/PORTB1/PINB1 */
+#ifndef	OPT_SINGLE_DIGITAL_PORT
+		{
+			REG_TO_OFFSET(DDRB),
+			REG_TO_OFFSET(PORTB),
+			REG_TO_OFFSET(PINB)
+		},
+#endif
+		GPIO_NO_ADC,
 		GPIO_NO_TIMER
 	},
 
-	/* #8 - D8 (PB0/PCINT8) */
+	/* #10 - D10 (PB0/PCINT8) */
 	{
 		(1 << 0), /* DDRB0/PORTB0/PINB0 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -182,35 +222,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #9 - D9 (PB1/OC1A/PCINT9) */
-	{
-		(1 << 1), /* DDRB1/PORTB1/PINB1 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		GPIO_NO_ADC,
-		0 /* timer_1A */
-	},
-
-	/* #10 - D10 (PB2/PCINT10) */
-	{
-		(1 << 2), /* DDRB2/PORTB2/PINB2 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		GPIO_NO_ADC,
-		GPIO_NO_TIMER
-	},
-
-	/* #11 - D11 (PB3/OC1B/PCINT11) */
+	/* #11 - D11 (PB3/PCINT11) */
 	{
 		(1 << 3), /* DDRB3/PORTB3/PINB3 */
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -221,66 +233,10 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		},
 #endif
 		GPIO_NO_ADC,
-		1 /* timer_1B */
-	},
-
-	/* #12 - D12/A7 (PB4/ADC7/PCINT12) */
-	{
-		(1 << 4), /* DDRB4/PORTB4/PINB4 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		7,
 		GPIO_NO_TIMER
 	},
 
-	/* #13 - D13/A8 (PB5/ADC8/OC1D/PCINT13) */
-	{
-		(1 << 5), /* DDRB5/PORTB5/PINB5 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		8,
-		2 /* timer_1D */
-	},
-
-	/* #14 - D14/A9 (PB6/ADC9/PCINT14) */
-	{
-		(1 << 6), /* DDRB6/PORTB6/PINB6 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		9,
-		GPIO_NO_TIMER
-	},
-
-	/* #15 - D15/A10 (PB7/ADC10/PCINT15) */
-	{
-		(1 << 7), /* DDRB7/PORTB7/PINB7 */
-#ifndef	OPT_SINGLE_DIGITAL_PORT
-		{
-			REG_TO_OFFSET(DDRB),
-			REG_TO_OFFSET(PORTB),
-			REG_TO_OFFSET(PINB)
-		},
-#endif
-		10,
-		GPIO_NO_TIMER
-	},
-
-	/* #16 - A11 (ADC11) */
+	/* #12 - A8 (ADC8) */
 	{
 		0,
 #ifndef	OPT_SINGLE_DIGITAL_PORT
@@ -290,7 +246,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 			GPIO_NO_REGISTER
 		},
 #endif
-		63,
+		34,
 		GPIO_NO_TIMER
 	}
 };
@@ -301,15 +257,12 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	0,	/* A0 -> D0 */
 	1,	/* A1 -> D1 */
 	2,	/* A2 -> D2 */
-	4,	/* A3 -> D4 */
-	5,	/* A4 -> D5 */
-	6,	/* A5 -> D6 */
-	7,	/* A6 -> D7 */
-	12,	/* A7 -> D12 */
-	13,	/* A8 -> D13 */
-	14,	/* A9 -> D14 */
-	15,	/* A10 -> D15 */
-	16	/* A11 */
+	3,	/* A3 -> D3 */
+	4,	/* A4 -> D4 */
+	5,	/* A5 -> D5 */
+	6,	/* A6 -> D6 */
+	7,	/* A7 -> D7 */
+	12	/* A8 */
 };
 
-#endif	/* __AVR_ATtiny261A__ || __AVR_ATtiny461A__ || __AVR_ATtiny861A__ */
+#endif	/* __AVR_ATtiny24__ || __AVR_ATtiny24A__ || __AVR_ATtiny44__ || __AVR_ATtiny44A__ || __AVR_ATtiny84__ || __AVR_ATtiny84A__ */

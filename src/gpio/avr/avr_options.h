@@ -260,7 +260,7 @@
 
 #if	defined(__AVR_ATmega1281__)
 #define	GPIO_PIN_COUNT 86
-#define	GPIO_ANALOG_PIN_COUNT 16
+#define	GPIO_ANALOG_PIN_COUNT 8
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM
@@ -284,7 +284,7 @@
 
 #if	defined(__AVR_ATmega2561__)
 #define	GPIO_PIN_COUNT 86
-#define	GPIO_ANALOG_PIN_COUNT 16
+#define	GPIO_ANALOG_PIN_COUNT 8
 #define	OPT_TIMER_8BIT
 #define	OPT_TIMER_16BIT
 #define	OPT_HIGH_IOM

@@ -3,10 +3,11 @@
  *
  * Source Files:
  *   atmega16_16a.avrspec
+ *   atmega32_32a.avrspec
  *
- * Pin configuration for atmega16/atmega16a.
+ * Pin configuration for atmega16/atmega16a/atmega32/atmega32a.
  */
-#if	defined(__AVR_ATmega16__) || defined(__AVR_ATmega16A__)
+#if	defined(__AVR_ATmega16__) || defined(__AVR_ATmega16A__) || defined(__AVR_ATmega32__) || defined(__AVR_ATmega32A__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -555,4 +556,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	7	/* A7 -> D7 */
 };
 
-#endif	/* __AVR_ATmega16__ || __AVR_ATmega16A__ */
+#endif	/* __AVR_ATmega16__ || __AVR_ATmega16A__ || __AVR_ATmega32__ || __AVR_ATmega32A__ */
