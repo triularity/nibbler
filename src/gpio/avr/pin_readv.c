@@ -16,7 +16,9 @@ gpio_pin_readv
 	gpio_pin_t pin
 )
 {
+#ifdef	ADSC
 	uint8_t		mux;
+#endif
 	uint8_t		bitmask;
 
 #ifdef	OPT_SINGLE_PIN
@@ -27,11 +29,12 @@ gpio_pin_readv
 #endif
 
 
+#ifdef	ADSC
 	if((mux = PGM_BYTE(pin->mux)) != GPIO_NO_ADC)
-	{
 		return _gpio_adc_read(mux);
-	}
-	else if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
+#endif	/* ADSC */
+
+	if((bitmask = PGM_BYTE(pin->bitmask)) != 0)
 	{
 #ifndef	OPT_SINGLE_PIN
 		reg = IOOFF_TO_PTR8(PGM_IOOFF(pin->p.pin));
@@ -42,6 +45,6 @@ gpio_pin_readv
 	else
 	{
 		/* No input */
-		return GPIO_LOW;
+		return 0;
 	}
 }

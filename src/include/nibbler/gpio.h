@@ -45,6 +45,13 @@ typedef	struct _gpio_pin *	gpio_pin_t;
 
 #define	GPIO_NO_PIN		((gpio_pin_t) 0)
 
+/*
+ * Resolved port
+ */
+typedef	struct _gpio_port *	gpio_port_t;
+
+#define	GPIO_NO_PORT		((gpio_port_t) 0)
+
 
 void				gpio_init(void);
 
@@ -53,11 +60,14 @@ uint8_t				gpio_get_analog_count(void);
 gpio_pin_t			gpio_get_digital(uint8_t pinno);
 uint8_t				gpio_get_digital_count(void);
 
+gpio_port_t			gpio_get_port(uint8_t portno);
+uint8_t				gpio_get_port_count(void);
+
 gpio_value_t			gpio_get_max_value(void);
 
 uint8_t				gpio_pin_async_done(gpio_pin_t pin);
-void				gpio_pin_async_readf(gpio_pin_t pin, float *result);
-void				gpio_pin_async_readv(gpio_pin_t pin, gpio_value_t *result);
+uint8_t				gpio_pin_async_readf(gpio_pin_t pin, float *resultp);
+uint8_t				gpio_pin_async_readv(gpio_pin_t pin, gpio_value_t *resultp);
 
 uint8_t				gpio_pin_mode(gpio_pin_t pin, uint8_t mode);
 gpio_state_t			gpio_pin_read(gpio_pin_t pin);
@@ -66,6 +76,10 @@ gpio_value_t			gpio_pin_readv(gpio_pin_t pin);
 void				gpio_pin_write(gpio_pin_t pin, gpio_state_t state);
 void				gpio_pin_writef(gpio_pin_t pin, float value);
 void				gpio_pin_writev(gpio_pin_t pin, gpio_value_t value);
+
+uint8_t				gpio_port_mode(gpio_port_t port, uint8_t bits, uint8_t mode);
+uint8_t				gpio_port_read(gpio_port_t port);
+void				gpio_port_write(gpio_port_t port, uint8_t value);
 
 void				gpio_set_reference(uint8_t reference);
 

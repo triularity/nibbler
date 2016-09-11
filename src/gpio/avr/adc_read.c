@@ -28,10 +28,27 @@ _gpio_adc_read
 	gpio_value_t	value;
 
 
-	/*
-	 * XXX - Wait for a running async read to finish
-	 */
+	if(_gpio_adc_async_pin != GPIO_NO_PIN)
+	{
+		/*
+		 * If interrupts disabled and busy then "fail" with no-value
+		 * to avoid deadlock
+		 */
+		if((SREG & (1<<SREG_I)) == 0)
+			return 0;
 
+		/*
+		 * Block while ADC busy
+		 */
+		while(_gpio_adc_async_pin != GPIO_NO_PIN)
+		{
+			__asm__(
+				"nop\n\t"
+				"nop\n\t"
+				"nop\n\t"
+				"nop\n\t");
+		}
+	}
 
 	/*
 	 * Selection/setup
@@ -49,11 +66,7 @@ _gpio_adc_read
 	while((_ADCSR & (1<<ADSC)) != 0)
 		/* loop */;
 
-	/*
-	 * MUST read ADCL first, per AVR specs
-	 */
-	value = ADCL;
-	value |= (ADCH << 8);
+	value = ADC;
 
 	/* Repeat the upper bits to fill low zeros */
 	value |= (value >> 10);

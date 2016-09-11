@@ -18,8 +18,5 @@ gpio_pin_async_done
 {
 	(void) pin; /* Quiet unused parameter */
 
-	/*
-	 * Temp implementation until real async
-	 */
-	return 1;
+	return (_gpio_adc_async_pin == GPIO_NO_PIN);
 }

@@ -123,12 +123,15 @@ struct _gpio_pin
  */
 #define	GPIO_NO_PIN_INDEX	0xFF
 
+typedef	void			(*adc_async_t)(gpio_value_t value);
 
 extern const struct _gpio_pin PROGMEM	_gpio_pins[];
 extern const uint8_t PROGMEM		_gpio_analog_to_digital_pins[];
 extern const struct _gpio_port PROGMEM	_gpio_ports[];
 extern const struct _gpio_timer PROGMEM	_gpio_timers[];
 
+extern volatile gpio_pin_t	_gpio_adc_async_pin;
+extern adc_async_t		_gpio_adc_async_callback;
 
 extern uint8_t			_gpio_adc_reference;
 

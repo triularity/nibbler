@@ -16,5 +16,5 @@ gpio_pin_readf
 	gpio_pin_t pin
 )
 {
-	return (float) gpio_pin_read(pin) / (float) GPIO_VALUE_MAX;
+	return (float) gpio_pin_readv(pin) / (float) GPIO_VALUE_MAX;
 }
