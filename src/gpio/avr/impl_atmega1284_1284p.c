@@ -2,11 +2,11 @@
  * THIS FILE IS AUTO-GENERATED. ANY EDITS MAY BE LOST.
  *
  * Source Files:
- *   atmega324a.avrspec
+ *   atmega1284_1284p.avrspec
  *
- * Pin configuration for atmega324a.
+ * Pin configuration for atmega1284/atmega1284p.
  */
-#if	defined(__AVR_ATmega324A__)
+#if	defined(__AVR_ATmega1284__) || defined(__AVR_ATmega1284P__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -83,6 +83,28 @@ const gpio_timer_t PROGMEM	_gpio_timers[] =
 		(uint8_t) ~((1<<COM2B1)|(1<<COM2B0)),
 		(1<<COM2B1),
 		REG_TO_OFFSET(OCR2B)
+	},
+
+	/* timer_3A */
+	{
+#ifndef	OPT_TIMER_SINGLETYPE
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR3A),
+		(uint8_t) ~((1<<COM3A1)|(1<<COM3A0)),
+		(1<<COM3A1),
+		REG_TO_OFFSET(OCR3A)
+	},
+
+	/* timer_3B */
+	{
+#ifndef	OPT_TIMER_SINGLETYPE
+		GPIO_TIMER_TYPE_16BIT,
+#endif
+		REG_TO_OFFSET(TCCR3A),
+		(uint8_t) ~((1<<COM3B1)|(1<<COM3B0)),
+		(1<<COM3B1),
+		REG_TO_OFFSET(OCR3B)
 	}
 };
 
@@ -198,7 +220,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		GPIO_NO_TIMER
 	},
 
-	/* #6 - D6 (PB6/PCINT14) */
+	/* #6 - D6 (PB6/OC3A/PCINT14) */
 	{
 		(1 << 6), /* DDRB6/PORTB6/PINB6 */
 		{
@@ -209,10 +231,10 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		GPIO_NO_TIMER
+		&_gpio_timers[6] - &_gpio_timers[0] /* timer_3A */
 	},
 
-	/* #7 - D7 (PB7/PCINT15) */
+	/* #7 - D7 (PB7/OC3B/PCINT15) */
 	{
 		(1 << 7), /* DDRB7/PORTB7/PINB7 */
 		{
@@ -223,7 +245,7 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 #endif
 		},
 		GPIO_NO_ADC,
-		GPIO_NO_TIMER
+		&_gpio_timers[7] - &_gpio_timers[0] /* timer_3B */
 	},
 
 	/* #8 - D8 (PC0/PCINT16) */
@@ -602,4 +624,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	29	/* A7 -> D29 */
 };
 
-#endif	/* __AVR_ATmega324A__ */
+#endif	/* __AVR_ATmega1284__ || __AVR_ATmega1284P__ */
