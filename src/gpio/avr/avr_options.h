@@ -55,7 +55,7 @@
 #endif
 
 #if	defined(__AVR_ATmega8U2__)
-#define	GPIO_PIN_COUNT 21
+#define	GPIO_PIN_COUNT 23
 #define	GPIO_ANALOG_PIN_COUNT 0
 #define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
@@ -87,7 +87,7 @@
 #endif
 
 #if	defined(__AVR_ATmega16U2__)
-#define	GPIO_PIN_COUNT 21
+#define	GPIO_PIN_COUNT 23
 #define	GPIO_ANALOG_PIN_COUNT 0
 #define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT
@@ -132,7 +132,7 @@
 #endif
 
 #if	defined(__AVR_ATmega32U2__)
-#define	GPIO_PIN_COUNT 21
+#define	GPIO_PIN_COUNT 23
 #define	GPIO_ANALOG_PIN_COUNT 0
 #define	GPIO_PORT_COUNT 3
 #define	OPT_TIMER_8BIT

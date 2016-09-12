@@ -379,6 +379,34 @@ const struct _gpio_pin PROGMEM	_gpio_pins[GPIO_PIN_COUNT] =
 		},
 		GPIO_NO_ADC,
 		GPIO_NO_TIMER
+	},
+
+	/* #21 - D21 (PC1) */
+	{
+		(1 << 1), /* DDRC1/PORTC1/PINC1 */
+		{
+#ifndef	OPT_SINGLE_DIGITAL_PORT
+			REG_TO_OFFSET(DDRC),
+			REG_TO_OFFSET(PORTC),
+			REG_TO_OFFSET(PINC)
+#endif
+		},
+		GPIO_NO_ADC,
+		GPIO_NO_TIMER
+	},
+
+	/* #22 - D22 (PC0) */
+	{
+		(1 << 0), /* DDRC0/PORTC0/PINC0 */
+		{
+#ifndef	OPT_SINGLE_DIGITAL_PORT
+			REG_TO_OFFSET(DDRC),
+			REG_TO_OFFSET(PORTC),
+			REG_TO_OFFSET(PINC)
+#endif
+		},
+		GPIO_NO_ADC,
+		GPIO_NO_TIMER
 	}
 };
 
