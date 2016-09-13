@@ -3,10 +3,14 @@
  *
  * Source Files:
  *   atmega164a_164pa_324a_324pa_644a_644pa.avrspec
+ *   atmega164p.avrspec
+ *   atmega324p.avrspec
+ *   atmega644.avrspec
+ *   atmega644p.avrspec
  *
- * Pin configuration for atmega164a/atmega164pa/atmega324a/atmega324pa/atmega644a/atmega644pa.
+ * Pin configuration for atmega164a/atmega164p/atmega164pa/atmega324a/atmega324p/atmega324pa/atmega644/atmega644a/atmega644p/atmega644pa.
  */
-#if	defined(__AVR_ATmega164A__) || defined(__AVR_ATmega164PA__) || defined(__AVR_ATmega324A__) || defined(__AVR_ATmega324PA__) || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644PA__)
+#if	defined(__AVR_ATmega164A__) || defined(__AVR_ATmega164P__) || defined(__AVR_ATmega164PA__) || defined(__AVR_ATmega324A__) || defined(__AVR_ATmega324P__) || defined(__AVR_ATmega324PA__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega644A__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega644PA__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -602,4 +606,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	29	/* A7 -> D29 */
 };
 
-#endif	/* __AVR_ATmega164A__ || __AVR_ATmega164PA__ || __AVR_ATmega324A__ || __AVR_ATmega324PA__ || __AVR_ATmega644A__ || __AVR_ATmega644PA__ */
+#endif	/* __AVR_ATmega164A__ || __AVR_ATmega164P__ || __AVR_ATmega164PA__ || __AVR_ATmega324A__ || __AVR_ATmega324P__ || __AVR_ATmega324PA__ || __AVR_ATmega644__ || __AVR_ATmega644A__ || __AVR_ATmega644P__ || __AVR_ATmega644PA__ */

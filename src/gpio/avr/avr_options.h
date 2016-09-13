@@ -12,7 +12,11 @@
  *   atmega48_88_168.avrspec
  *   atmega48a_48pa_88a_88pa_168a_168pa_328_328p.avrspec
  *   atmega164a_164pa_324a_324pa_644a_644pa.avrspec
+ *   atmega164p.avrspec
+ *   atmega324p.avrspec
  *   atmega640_1280_1281_2560_2561.avrspec
+ *   atmega644.avrspec
+ *   atmega644p.avrspec
  *   atmega1284_1284p.avrspec
  *   attiny13_13a.avrspec
  *   attiny24_44_84.avrspec
@@ -255,7 +259,19 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
+#endif
+
+#if	defined(__AVR_ATmega164P__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_MCUCR_PUD
+#define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega164PA__)
@@ -269,7 +285,6 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega168__)
@@ -322,7 +337,19 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
+#endif
+
+#if	defined(__AVR_ATmega324P__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_MCUCR_PUD
+#define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega324PA__)
@@ -336,7 +363,6 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega328__)
@@ -383,6 +409,19 @@
 #define	OPT_TCCR5B_CS5X
 #endif
 
+#if	defined(__AVR_ATmega644__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_MCUCR_PUD
+#define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#endif
+
 #if	defined(__AVR_ATmega644A__)
 #define	GPIO_PIN_COUNT 32
 #define	GPIO_ANALOG_PIN_COUNT 8
@@ -394,7 +433,19 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
+#endif
+
+#if	defined(__AVR_ATmega644P__)
+#define	GPIO_PIN_COUNT 32
+#define	GPIO_ANALOG_PIN_COUNT 8
+#define	GPIO_PORT_COUNT 4
+#define	OPT_TIMER_8BIT
+#define	OPT_TIMER_16BIT
+#define	OPT_ADMUX_ADLAR
+#define	OPT_MCUCR_PUD
+#define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega644PA__)
@@ -408,7 +459,6 @@
 #define	OPT_TCCR0B_CS0X
 #define	OPT_TCCR1B_CS1X
 #define	OPT_TCCR2B_CS2X
-#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega1280__)
