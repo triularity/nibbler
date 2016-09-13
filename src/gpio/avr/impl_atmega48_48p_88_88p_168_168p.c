@@ -3,10 +3,11 @@
  *
  * Source Files:
  *   atmega48_88_168.avrspec
+ *   atmega48p_88p_168p.avrspec
  *
- * Pin configuration for atmega48/atmega88/atmega168.
+ * Pin configuration for atmega48/atmega48p/atmega88/atmega88p/atmega168/atmega168p.
  */
-#if	defined(__AVR_ATmega48__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega168__)
+#if	defined(__AVR_ATmega48__) || defined(__AVR_ATmega48P__) || defined(__AVR_ATmega88__) || defined(__AVR_ATmega88P__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__)
 
 #include <stdint.h>
 #include <avr/io.h>
@@ -514,4 +515,4 @@ const uint8_t PROGMEM		_gpio_analog_to_digital_pins[GPIO_ANALOG_PIN_COUNT] =
 	25	/* A8 */
 };
 
-#endif	/* __AVR_ATmega48__ || __AVR_ATmega88__ || __AVR_ATmega168__ */
+#endif	/* __AVR_ATmega48__ || __AVR_ATmega48P__ || __AVR_ATmega88__ || __AVR_ATmega88P__ || __AVR_ATmega168__ || __AVR_ATmega168P__ */
