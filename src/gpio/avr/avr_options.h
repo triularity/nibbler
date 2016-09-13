@@ -41,6 +41,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega8A__)
@@ -52,6 +54,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega8U2__)
@@ -73,6 +77,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega16A__)
@@ -84,6 +90,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega16U2__)
@@ -118,6 +126,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega32A__)
@@ -129,6 +139,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_SFIOR_PUD
 #define	OPT_TCCR0_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2_CS2X
 #endif
 
 #if	defined(__AVR_ATmega32U2__)
@@ -163,6 +175,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega48A__)
@@ -174,6 +188,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega48PA__)
@@ -185,6 +201,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega88__)
@@ -196,6 +214,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega88A__)
@@ -207,6 +227,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega88PA__)
@@ -218,6 +240,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega164A__)
@@ -229,6 +253,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega164PA__)
@@ -240,6 +267,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega168__)
@@ -251,6 +281,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega168A__)
@@ -262,6 +294,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega168PA__)
@@ -273,6 +307,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega324A__)
@@ -284,6 +320,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega324PA__)
@@ -295,6 +334,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega328__)
@@ -306,6 +348,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega328P__)
@@ -317,6 +361,8 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
 #endif
 
 #if	defined(__AVR_ATmega640__)
@@ -330,6 +376,11 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
+#define	OPT_TCCR4B_CS4X
+#define	OPT_TCCR5B_CS5X
 #endif
 
 #if	defined(__AVR_ATmega644A__)
@@ -341,6 +392,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega644PA__)
@@ -352,6 +406,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega1280__)
@@ -365,6 +422,11 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
+#define	OPT_TCCR4B_CS4X
+#define	OPT_TCCR5B_CS5X
 #endif
 
 #if	defined(__AVR_ATmega1281__)
@@ -378,6 +440,11 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
+#define	OPT_TCCR4B_CS4X
+#define	OPT_TCCR5B_CS5X
 #endif
 
 #if	defined(__AVR_ATmega1284__)
@@ -389,6 +456,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega1284P__)
@@ -400,6 +470,9 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
 #endif
 
 #if	defined(__AVR_ATmega2560__)
@@ -413,6 +486,11 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
+#define	OPT_TCCR4B_CS4X
+#define	OPT_TCCR5B_CS5X
 #endif
 
 #if	defined(__AVR_ATmega2561__)
@@ -426,6 +504,11 @@
 #define	OPT_ADMUX_ADLAR
 #define	OPT_MCUCR_PUD
 #define	OPT_TCCR0B_CS0X
+#define	OPT_TCCR1B_CS1X
+#define	OPT_TCCR2B_CS2X
+#define	OPT_TCCR3B_CS3X
+#define	OPT_TCCR4B_CS4X
+#define	OPT_TCCR5B_CS5X
 #endif
 
 #if	defined(__AVR_ATtiny13__)
